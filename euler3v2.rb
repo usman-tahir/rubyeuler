@@ -1,42 +1,47 @@
 # solution for http://projecteuler.net/problem=3
-# NOT using require 'prime'
-# commented out for learning purposes
+# This DOESN'T use require 'prime.'
+# I commented it out for learning purposes.
 
-# set start time for program
+# This sets the start time for the program.
 start_time = Time.new
 
-# asks for input
+# Ask for input.
 puts "Factorize this ==> " 
-# gets number input and sets it to an integer
+# Get the input as an integer.
 z = gets.to_i
-# creates a variable called factor set to two
+# Create a variable called factor set to 2.
+# 2 is the first prime number above 1, so you can start
+# incrementing from there.
 factor = 2
-# creates a variable called last_factor set to one
+# Create a variable called last_factor set to 1.
+# This stores the value of the current largest prime factor
+# as the while loop runs.
 last_factor = 1
 
-# while loop to go through all the potential numbers
-# while the value for z -- starting with the user's input -- is still greater than one
+# This is a while loop to run through all possible prime factors of z.
+# "While z is greater than one..."
 while z > 1
-	# if the current value of z modulo the current value for factor equals zero
+	# Tests to see if z modulo factor is 0. If so, factor is a prime factor of z.
 	if z % factor == 0
-		# set last_factor to equal factor
+		# Sets last_factor to the value that factor had in line 25.
 		last_factor = factor
-		# set the new value of z to equal the old value of z divided by factor
+		# Sets a new value for z equal to prior z divided by factor.
 		z = z/factor
-		# nestest while loop to deal with the new value of z
-		# while the new value of z modulo factor is equal to zero
+		# Nested while loop to handle the new value of z.
+		# "While the value of z from line 29 modulo factor equals zero..."
 		while z % factor == 0
-			# set a new value for z equal to z divided by factor
+			# Sets a new value for z equal to prior z divided by factor.
 			z = z/factor
-		# end the nested while loop when z modulo factor is no longer zero
-		# then kick back out to the if-else statement
+		# Ends the nested while loop when z % factor == 0 is false.
+		# Kicks back to if statement on line 25.
 		end
-	# if z modulo factor in line 21 returns a value other than zero 	
-	# increment factor by 1
+	# If z modulo factor does not equal 0, increment the factor by one
+	# and try again.
 	else factor = factor + 1
-	# go through the while loop again until z has no prime factors greater than zero	
-end # ends when it's set last_factor to the biggest possible factor
-puts last_factor # prints the last value
+	# Loop through lines 23-40 until z > 1 is false.
+end # When z > 1 is false, last_factor will be set as the largest prime factor.
+puts last_factor # Prints out the last factor.
 end
-# prints program run time by subtracting start_time set in line 6 from the current time
+# Prints program run time in seconds by subtracting start_time set in line 6 
+# from the current time. The number goes out four decminal places.
 printf("Run time %.4f s\n", Time.new - start_time)
