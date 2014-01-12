@@ -2,10 +2,9 @@
 
 # Find the largest palindrome made from the product of two 3-digit numbers.
 start_time = Time.new
-z = 99
-q = 99
+z = 999
+q = 999
 i = 999999
-x = 0
 palin = Array.new()
 
 # all the palindromes from 999999 to 100001 stored with 999999 at index 0
@@ -18,13 +17,13 @@ while i > 100001
 	if f = g
 		# puts "f is " + f + " and g is " + g # debug
 		h = f + g.reverse
-		h.to_i
+		h = h.to_i
 		palin.push h
 		i = i - 1
 	else
 		i = i - 1
 	end		
 end
-puts palin[2] # debug
-puts palin [-3] # debug
+puts palin[0..20] # debug
+
 printf("Run time %.4f s\n", Time.new - start_time)
