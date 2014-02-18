@@ -11,5 +11,5 @@ def factorial(num)
 end
 
 hundred = factorial(100).to_s.split('').map(&:to_i)
-puts hundred.inject{|sum,x| sum + x}
+puts hundred.inject(:+)
 puts ((Time.now - runtime).to_f).to_s + " s"
