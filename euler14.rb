@@ -23,6 +23,6 @@ for n in 2..999_999
 	end
 end	
 
-p store
+p store[0]
 
 puts ((Time.now - runtime).to_f).to_s + " s"
