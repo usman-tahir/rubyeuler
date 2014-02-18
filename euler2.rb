@@ -2,7 +2,7 @@
 
 i = 0
 fibo = Array.new
-fibo = [0, 1, 2, 3, 5, 8]
+fibo = [1, 1, 2, 3, 5, 8]
 lodo = Array.new
 
 # -1 would be the last index position of the Array
