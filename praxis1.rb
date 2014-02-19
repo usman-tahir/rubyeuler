@@ -18,5 +18,5 @@ end
 print "Please enter a number to test: "
 input = gets.chomp.to_i
 
-puts productize(input)
+productize(input)
 puts ((Time.now - runtime).to_f).to_s + " s"
