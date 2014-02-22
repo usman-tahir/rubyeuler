@@ -1,6 +1,6 @@
 rubyeuler
 =========
 
-Solutions to Project Euler programs in Ruby.
+Solutions to Project Euler and Programming Praxis problems in Ruby.
 
-See the problems at [Project Euler](http://projecteuler.net/problems "Project Euler")
+See the problems at [Project Euler](http://projecteuler.net/problems "Project Euler") and [Programming Praxis](http://programmingpraxis.com "Programming Praxis").
