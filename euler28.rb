@@ -1,5 +1,6 @@
 # http://projecteuler.net/problem=28
 # What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral?
+runtime = Time.now
 box_size = 1001
 
 def top_right(size)
@@ -32,3 +33,4 @@ bleft.each_with_index do |x, i| y = (x - (2 * (i + 1)))
 end
 
 puts 1 + tright.inject(:+) + tleft.inject(:+) + bleft.inject(:+) + bright.inject(:+)
+puts ((Time.now - runtime).to_f).to_s + " s"
