@@ -18,7 +18,7 @@ def tri_pen_hex(num)
 end		
 
 def tri(num)
-	(0.5 * Math.sqrt(8 * num + 1) - 0.5 % 1)
+	(0.5 * Math.sqrt(8 * num + 1) - 0.5)
 end
 
 def pen(num)
