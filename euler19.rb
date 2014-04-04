@@ -4,7 +4,7 @@ runtime = Time.now
 def sundays
 	sundays = Array.new
 	t = Time.gm(1901,"jan",1)
-	day = 86400
+	day = 86400 # seconds
 	until t.strftime("%D") == "12/31/00"
 		if t.sunday? == true
 			sundays.push t.strftime("%d")
