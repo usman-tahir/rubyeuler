@@ -11,7 +11,7 @@ def gen_prime(num)
 end
 
 def circular_test(num,places)
-	num.to_s.split("").rotate(places).map {|i| i.to_i}.join('').to_i.prime?
+	num.to_s.split('').rotate(places).map {|i| i.to_i}.join('').to_i.prime?
 end	
 
 def find_circular_primes
