@@ -12,23 +12,23 @@ until permutations[n] == nil
 	else
 	end
 	n += 1
-end		
+end	
 
-threes = Array.new
+fives = Array.new
 n = 0
 until twos[n] == nil
-	if twos[n][2..4].inject(:+) % 3 == 0
-		threes.push twos[n]
+	if twos[n][5] == 5
+		fives.push twos[n]
 	else
 	end
 	n += 1
 end
 
-fives = Array.new
+threes = Array.new
 n = 0
-until threes[n] == nil
-	if threes[n][5] == 5
-		fives.push threes[n]
+until fives[n] == nil
+	if fives[n][2..4].inject(:+) % 3 == 0
+		threes.push fives[n]
 	else
 	end
 	n += 1
@@ -36,9 +36,9 @@ end
 
 sevens = Array.new
 n = 0
-until fives[n] == nil
-	if (fives[n][4].to_s + fives[n][5].to_s + fives[n][6].to_s).to_i % 7 == 0
-		sevens.push fives[n]
+until threes[n] == nil
+	if (threes[n][4].to_s + threes[n][5].to_s + threes[n][6].to_s).to_i % 7 == 0
+		sevens.push threes[n]
 	else
 	end
 	n += 1
