@@ -2,13 +2,13 @@
 runtime = Time.now
 
 pandigitals = [0,1,2,3,4,5,6,7,8,9]
-storage = pandigitals.permutation.to_a
+permutations = pandigitals.permutation.to_a
 
 twos = Array.new
 n = 0
-until storage[n] == nil
-	if storage[n][3] % 2 == 0
-		twos.push storage[n]
+until permutations[n] == nil
+	if permutations[n][3] % 2 == 0
+		twos.push permutations[n]
 	else
 	end
 	n += 1
