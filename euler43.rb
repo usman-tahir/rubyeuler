@@ -78,15 +78,15 @@ sub_str_div = Array.new
 n = 0
 until seventeens[n] == nil
 	sub_str_div.push (seventeens[n][0].to_s + 
-										seventeens[n][1].to_s + 
-										seventeens[n][2].to_s + 
-										seventeens[n][3].to_s + 
-										seventeens[n][4].to_s + 
-										seventeens[n][5].to_s + 
-										seventeens[n][6].to_s + 
-										seventeens[n][7].to_s + 
-										seventeens[n][8].to_s + 
-										seventeens[n][9].to_s).to_i
+		seventeens[n][1].to_s + 
+		seventeens[n][2].to_s + 
+		seventeens[n][3].to_s + 
+		seventeens[n][4].to_s + 
+		seventeens[n][5].to_s + 
+		seventeens[n][6].to_s + 
+		seventeens[n][7].to_s + 
+		seventeens[n][8].to_s + 
+		seventeens[n][9].to_s).to_i
 	n += 1
 end
 
