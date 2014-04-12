@@ -4,21 +4,11 @@ runtime = Time.now
 pandigitals = [0,1,2,3,4,5,6,7,8,9]
 permutations = pandigitals.permutation.to_a
 
-twos = Array.new
-n = 0
-until permutations[n] == nil
-	if permutations[n][3] % 2 == 0
-		twos.push permutations[n]
-	else
-	end
-	n += 1
-end	
-
 fives = Array.new
 n = 0
-until twos[n] == nil
-	if twos[n][5] == 5
-		fives.push twos[n]
+until permutations[n] == nil
+	if permutations[n][5] == 5
+		fives.push permutations[n]
 	else
 	end
 	n += 1
@@ -34,11 +24,21 @@ until fives[n] == nil
 	n += 1
 end
 
-sevens = Array.new
+twos = Array.new
 n = 0
 until threes[n] == nil
-	if (threes[n][4].to_s + threes[n][5].to_s + threes[n][6].to_s).to_i % 7 == 0
-		sevens.push threes[n]
+	if threes[n][3] % 2 == 0
+		twos.push threes[n]
+	else
+	end
+	n += 1
+end	
+
+sevens = Array.new
+n = 0
+until twos[n] == nil
+	if (twos[n][4].to_s + twos[n][5].to_s + twos[n][6].to_s).to_i % 7 == 0
+		sevens.push twos[n]
 	else
 	end
 	n += 1
