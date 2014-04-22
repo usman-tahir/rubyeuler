@@ -58,10 +58,8 @@ def include_even(number)
 end
 
 truncatables = []
-(10..1_000_000).each do |num|
+Prime.each(1_000_000) do |num|
   next if num > 9 && include_even(num) == true
-  next if num > 9 && num % 2 == 0 || num % 5 == 0
-  next if num > 10 && (num.to_s.scan(/./).map {|e| e.to_i}).inject(:+) % 3 == 0
   truncatables.push num if right_test(num) == true && left_test(num) == true
   puts num.to_s + ": yes" if right_test(num) == true && left_test(num) == true
 end
