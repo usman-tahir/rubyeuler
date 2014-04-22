@@ -58,7 +58,7 @@ def include_even(number)
 end
 
 truncatables = []
-Prime.each(1_000_000) do |num|
+Prime.each do |num|
   next if num > 9 && include_even(num) == true
   truncatables.push num if right_test(num) == true && left_test(num) == true
   puts num.to_s + ": yes" if right_test(num) == true && left_test(num) == true
