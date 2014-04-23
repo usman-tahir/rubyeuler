@@ -87,7 +87,7 @@ Prime.each(9999) do |n|
 end
 
 candidates = []
-  values.each do |n|
+values.each do |n|
   next if discard_numbers(n) == true
   candidates.push n if discard_numbers(n) == false
 end
