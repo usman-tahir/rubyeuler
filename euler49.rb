@@ -82,17 +82,6 @@ def discard_numbers(number)
   end
 end
 
-def test_permutations(num)
-  prime_permutations = []
-  test = num.to_s.scan(/./).map {|e| e.to_i}.permutation.to_a
-  test.each_with_index do |x,i|
-    next if test[i].join.to_i.prime? == false
-    prime_permutations.push test[i].join.to_i if test[i].join.to_i.prime? == true
-  end
-  return false if num.to_s.scan(/./).map {|e| e.to_i}.uniq.count < 4 || prime_permutations.uniq.count < 3
-  return true if prime_permutations.uniq.count >= 3 && num.to_s.scan(/./).map {|e| e.to_i}.uniq.count == 4 
-end
-
 Prime.each(9999) do |n|
   values.push n if n > 1000
 end
