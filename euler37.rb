@@ -4,26 +4,26 @@ require 'prime'
 runtime = Time.now
 
 def left_test(num)
-  left_primes = Array.new 
+  left_primes = Array.new
   x = num.to_s
   left_primes.push num if num.prime? == true
   num = num.to_s.reverse!
-  if num.length > 1 && num.reverse.to_i.prime? == true 
+  if num.length > 1 && num.reverse.to_i.prime? == true
     while num.length > 1 && num.reverse.to_i.prime? == true
-      if num.chop.reverse.to_i.prime? == true 
-      left_primes.push num.chop.reverse.to_i 
+      if num.chop.reverse.to_i.prime? == true
+      left_primes.push num.chop.reverse.to_i
       num.chop!
-      else break		
+      else break  
       end
     end
   elsif num.length == 1 && num.to_i.prime? == true
-  left_primes.push num.to_i	
+  left_primes.push num.to_i 
   else
   end
   return true if x.length == left_primes.count
 end
 
-def right_test(num)	
+def right_test(num) 
   right_primes = Array.new
   x = num.to_s
   right_primes.push num if num.prime? == true
@@ -33,11 +33,11 @@ def right_test(num)
       if num.chop.to_i.prime? == true
       right_primes.push num.chop.to_i
       num.chop!
-      else break		
+      else break  
       end
     end
   elsif num.length == 1 && num.to_i.prime? == true
-  right_primes.push num.to_i	
+  right_primes.push num.to_i  
   else
   end
   return true if x.length == right_primes.count
@@ -54,19 +54,14 @@ def include_even(number)
   elsif test.include? [8]
     return true
   else return false
-  end	
-end
-
-rights = []
-Prime.each(1_000_000) do |num|
-  next if num > 9 && include_even(num) == true
-  rights.push num if right_test(num) == true
+  end 
 end
 
 truncatables = []
-rights.each do |num|
-  truncatables.push num if left_test(num) == true
-  puts num.to_s + ": yes" if left_test(num) == true
+Prime.each do |num|
+  next if num > 9 && include_even(num) == true
+  truncatables.push num if right_test(num) == true && left_test(num) == true
+  puts num.to_s + ": yes" if right_test(num) == true && left_test(num) == true
   break if truncatables.count == 11
 end
 
