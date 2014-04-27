@@ -14,7 +14,7 @@ def bottles_of_beer(num)
   end
 end
 
-x = 100
+x = 99
 until x == 0
   bottles_of_beer(x)
   x -= 1
