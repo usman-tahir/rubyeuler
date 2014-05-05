@@ -14,11 +14,11 @@ def square_digit_chain(number)
   end   			
 end
 
-#eightynines =[]
-#(1..10_000_000).each do |number|
- # puts number
-  #eightynines.push number if square_digit_chain(number) == 89
-#end
-puts square_digit_chain(1_000_000)
-#puts eightynines.count	
+eightynines =[]
+(1..10_000_000).each do |number|
+  puts number
+  eightynines.push number if square_digit_chain(number) == 89
+end
+
+puts eightynines.count	
 puts ((Time.now - starttime).to_f).to_s + "s"
