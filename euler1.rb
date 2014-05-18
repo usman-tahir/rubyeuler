@@ -1,25 +1,11 @@
-# solution for http://projecteuler.net/problem=1
+# http://projecteuler.net/problem=1
+start_time = Time.now
 
-i = 1
-sum_total = Array.new
+array_of_multiples =[]
 
-while (i < 1000)
-	if (i % 3 == 0)
-		k = i
-		puts k
-		sum_total.push k
-	elsif (i % 5 == 0)	
-		p = i
-		puts p
-		sum_total.push p
-	else 
-		puts "not divisible by 3 or 5"
-	end
-	i = i + 1
-end	  
+(1..999).each do |number|
+	array_of_multiples.push number if number % 3 == 0 || number % 5 == 0
+end
 
-puts "..."
-puts sum_total
-
-sum = sum_total.reduce :+
-puts sum
+puts array_of_multiples.inject(:+)	
+puts ((Time.now - start_time).to_f).to_s + "s"
