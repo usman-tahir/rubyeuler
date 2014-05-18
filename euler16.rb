@@ -1,9 +1,6 @@
 # http://projecteuler.net/problem=16
-start_time = Time.new
+start_time = Time.now
 
-x = (2 ** 1000).to_s
-q = x.split('').map(&:to_i)
-p q
-p q.inject(:+)
+puts (((2**1000).to_s).split('').map(&:to_i)).inject(:+)
 
-printf("Run time %.4f s\n", Time.new - start_time)
+puts ((Time.now - start_time).to_f).to_s + "s"
