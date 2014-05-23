@@ -6,4 +6,4 @@ until smallest_num % 20 == 0 && smallest_num % 19 == 0 && smallest_num % 18 == 0
 end
 	
 puts smallest_num
-printf("Run time %.4f s\n", Time.new - start_time)
+puts ((Time.now - start_time).to_f).to_s + "s"
