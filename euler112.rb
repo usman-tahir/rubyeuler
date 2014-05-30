@@ -5,12 +5,11 @@ bouncy_number_attempt = 1587000
 # this is an idiotic way to do this but I manually tried different numbers
 # for bouncy_number_attempt to narrow the possibilities until line 30 == 0.99
 
-
 def bouncy_test(number)
-	stringified_number = number.to_s
-	bouncy =[]
-	stringifield_length = stringified_number.length - 2 # keep from reaching nil values
-	(0..stringifield_length).each do |index|
+  stringified_number = number.to_s
+  bouncy =[]
+  stringifield_length = stringified_number.length - 2 # keep from reaching nil values
+  (0..stringifield_length).each do |index|
     bouncy.push "true" if stringified_number[index].to_i < stringified_number[index+1].to_i
     bouncy.push "false" if stringified_number[index].to_i > stringified_number[index+1].to_i
   end
@@ -24,7 +23,6 @@ def count_bouncy_numbers(ceiling)
   end
   return bouncy_numbers.count
 end
-
 
 puts bouncy_number_attempt
 puts count_bouncy_numbers(bouncy_number_attempt).to_f/bouncy_number_attempt.to_f
