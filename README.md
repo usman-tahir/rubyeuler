@@ -1,6 +1,6 @@
 rubyeuler
 =========
 
-Solutions to Project Euler and Programming Praxis problems in Ruby.
+Solutions to Project Euler, Programming Praxis, and Rosetta Code problems in Ruby.
 
-See the problems at [Project Euler](http://projecteuler.net/problems "Project Euler") and [Programming Praxis](http://programmingpraxis.com "Programming Praxis").
+See the problems at [Project Euler](http://projecteuler.net/problems "Project Euler"), [Programming Praxis](http://programmingpraxis.com "Programming Praxis"), and [Rosetta Code](http://rosettacode.org/wiki/Category:Programming_Tasks "Rosetta Code").
