@@ -25,12 +25,12 @@ guess = guess.to_s.scan(/./).map { |number| number.to_i }
 bulls = 0
 cows = 0
 guess.each_with_index do |number, index|
-	if guess[index] == random_number[index]
-		bulls += 1
-	elsif random_number.include? number
-	  cows += 1
-	else
-	end
+  if guess[index] == random_number[index]
+    bulls += 1
+  elsif random_number.include? number
+    cows += 1
+  else
+  end
 end	  	
 
 puts "Here's your score:"
