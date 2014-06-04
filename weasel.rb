@@ -12,22 +12,21 @@ def create_origin
   return origin
 end
 
-# fix this comparison thing!
 def fitness_comparison(array)	
   fittest = String.new
   fitness_counter = 0
   array.each_index do |index|
-  position_counter = 0
-  child_one_counter = 0
-  child_two_counter = 0
-  break if array[index+1] == nil
-  while position_counter < 28
-    child_one_counter += 1 if array[index][position_counter] == TARGET[position_counter]
-    child_two_counter += 1 if array[index+1][position_counter] == TARGET[position_counter]
-    position_counter += 1
-  end
-  fittest = array[index] if child_one_counter >= child_two_counter
-  fittest = array[index+1] if child_two_counter > child_one_counter
+    position_counter = 0
+    child_one_counter = 0
+    child_two_counter = 0
+    break if array[index+1] == nil
+    while position_counter < 28
+      child_one_counter += 1 if array[index][position_counter] == TARGET[position_counter]
+      child_two_counter += 1 if array[index+1][position_counter] == TARGET[position_counter]
+      position_counter += 1
+    end
+    fittest = array[index] if child_one_counter >= child_two_counter
+    fittest = array[index+1] if child_two_counter > child_one_counter
   end
   return fittest
 end
