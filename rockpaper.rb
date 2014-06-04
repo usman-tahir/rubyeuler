@@ -5,8 +5,8 @@ rock_counter = 0
 scissors_counter = 0
 paper_counter = 0
 game_counter = 0
+computer_guesses = ["Rock", "Paper", "Scissors"]
 until game_over == true	
-  computer_guesses = ["Rock", "Paper", "Scissors"]
   computer_guess = computer_guesses.sample
   print "Choose your weapon: (R)ock, (P)aper, (S)cissors: "
   human_guesses = gets.chomp.to_s.upcase
