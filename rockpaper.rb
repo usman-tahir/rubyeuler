@@ -66,7 +66,7 @@ until game_over == true
     puts "You guessed Rock " + rock_counter.to_s + " times."
     puts "You guessed Paper " + paper_counter.to_s + " times."
     puts "You guessed Scissors " + scissors_counter.to_s + " times."
-    puts computer_guesses.inspect
+    # puts computer_guesses.inspect
     game_over = true
   else
     puts "Something went wrong!"
