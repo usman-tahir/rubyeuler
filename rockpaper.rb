@@ -58,15 +58,15 @@ until game_over == true
 
   case
   when play_again == "Y"
-  	game_over = false
+    game_over = false
   when play_again == "N"
-  	puts "Thanks for playing!" 
-  	puts "We played once." if game_counter == 1
-  	puts "We played " + game_counter.to_s + " times." if game_counter > 1
-  	puts "You guessed Rock " + rock_counter.to_s + " times."
-  	puts "You guessed Paper " + paper_counter.to_s + " times."
-  	puts "You guessed Scissors " + scissors_counter.to_s + " times."
-  	puts computer_guesses.inspect
+    puts "Thanks for playing!" 
+    puts "We played once." if game_counter == 1
+    puts "We played " + game_counter.to_s + " times." if game_counter > 1
+    puts "You guessed Rock " + rock_counter.to_s + " times."
+    puts "You guessed Paper " + paper_counter.to_s + " times."
+    puts "You guessed Scissors " + scissors_counter.to_s + " times."
+    puts computer_guesses.inspect
     game_over = true
   else
     puts "Something went wrong!"
