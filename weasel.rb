@@ -58,6 +58,8 @@ until parent == TARGET
   generation += 1
   parent = fitness_comparison(children(parent))
   puts generation.to_s + ": " + parent
+  puts "The sun burned out." if generation == 200_000
+  break if generation == 200_000
 end
 
 puts ((Time.now - start_time).to_f).to_s + "s"
