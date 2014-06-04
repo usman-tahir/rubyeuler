@@ -6,12 +6,13 @@ EVOLUTIONARY_MATERIAL = ("A".."Z").to_a; EVOLUTIONARY_MATERIAL << " "
 
 def create_origin
   origin = String.new
-  20.times do  
+  28.times do  
     origin << EVOLUTIONARY_MATERIAL.sample.to_s
   end
   return origin
 end
 
+# fix this comparison thing!
 def fitness_comparison(array)	
   fittest = String.new
   fitness_counter = 0
@@ -20,7 +21,7 @@ def fitness_comparison(array)
   child_one_counter = 0
   child_two_counter = 0
   break if array[index+1] == nil
-  while position_counter < 20
+  while position_counter < 28
     child_one_counter += 1 if array[index][position_counter] == TARGET[position_counter]
     child_two_counter += 1 if array[index+1][position_counter] == TARGET[position_counter]
     position_counter += 1
@@ -34,8 +35,8 @@ end
 def mutate(string)
   mutation_array = string.scan(/./).to_a
   mutation_counter = 0
-  while mutation_counter < 20
-    if rand(1..10) == 3		
+  while mutation_counter < 28
+    if rand(1..1200) == 42 # each character has a 1 in 1200 chance of mutating		
       mutation_array[mutation_counter] = EVOLUTIONARY_MATERIAL.sample
     else
     end
