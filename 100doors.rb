@@ -6,15 +6,7 @@ doors =[]
   doors << 0 # 0 for closed; 1 for open
 end   
 
-# first pass
-doors.each_index do |index|
-  if doors[index] == 0
-    doors[index] = 1
-  end
-end
-
-# passes 2 through 100
-modulo_to_visit = 2
+modulo_to_visit = 1
 while modulo_to_visit < 101
   (0..99).each do |index|
     if (index+1) % modulo_to_visit == 0
