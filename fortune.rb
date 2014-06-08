@@ -3,9 +3,7 @@
 start_time = Time.now
 
 fortunes =[]
-File.open('fortunes.txt').each_line do |line|
-  fortunes << line
-end
-
+File.open('fortunes.txt').each_line { |line| fortunes << line }
 puts fortunes.sample.to_s
+
 puts ((Time.now - start_time).to_f).to_s + "s"  
