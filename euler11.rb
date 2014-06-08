@@ -90,11 +90,14 @@ def find_backward_diagonal(array)
   highest_value	
 end
 
-highest_grid_value = 0
-highest_grid_value = find_horizontal(grid) if find_horizontal(grid) > highest_grid_value
-highest_grid_value = find_vertical(grid) if find_vertical(grid) > highest_grid_value
-highest_grid_value = find_forward_diagonal(grid) if find_forward_diagonal(grid) > highest_grid_value
-highest_grid_value = find_backward_diagonal(grid) if find_backward_diagonal(grid) > highest_grid_value
-puts highest_grid_value.to_s + " is the highest value in the grid."
+def highest_grid_value(array)
+  highest_grid_value = []
+  highest_grid_value << find_horizontal(array)
+  highest_grid_value << find_vertical(array)
+  highest_grid_value << find_forward_diagonal(array)
+  highest_grid_value << find_backward_diagonal(array)
+  puts highest_grid_value.max.to_s + " is the highest value in the grid."
+end
 
+highest_grid_value(grid)
 puts ((Time.now - start_time).to_f).to_s + "s"
