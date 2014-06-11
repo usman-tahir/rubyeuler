@@ -8,7 +8,7 @@ def find_christmas_sundays(first, last)
     christmas = Time.new(year, 12, 25)
     christmas_sundays << christmas if christmas.sunday?
   end
-  puts christmas_sundays	
+  puts christmas_sundays
 end
 
 find_christmas_sundays(2008, 2121)
