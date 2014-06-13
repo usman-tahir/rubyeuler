@@ -16,11 +16,12 @@ def find_best_shuffle(string)
     best_shuffle = true if array_to_shuffle.count < 2
     best_shuffle = true if array_to_shuffle.count > array_to_shuffle.uniq.count * 3 && similarity_counter < array_to_shuffle.count
   end
-  return string + ", " + shuffled_array.join + ", (" + similarity_counter.to_s + ")"
+  result_array = [string, shuffled_array.join, similarity_counter.to_s]
+  return result_array
 end
 
 strings_to_test.each do |test_string|
-  puts find_best_shuffle(test_string)
+  puts find_best_shuffle(test_string).inspect
 end
 
 puts ((Time.now - start_time).to_f).to_s + "s"	

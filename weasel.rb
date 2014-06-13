@@ -35,7 +35,7 @@ def mutate(string)
   mutation_array = string.scan(/./).to_a
   mutation_counter = 0
   while mutation_counter < 28
-    if rand(1..1200) == 42 # each character has a 1 in 1200 chance of mutating		
+    if rand(1..1000) == 42 # each character has a 1 in 1200 chance of mutating		
       mutation_array[mutation_counter] = EVOLUTIONARY_MATERIAL.sample
     else
     end
