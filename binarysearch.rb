@@ -11,7 +11,7 @@ def binary_search(array_to_search, low, high, value_to_find)
   when array_to_search[mid] < value_to_find
     binary_search(array_to_search, mid+1, high, value_to_find)
   else 
-  	mid
+    mid
   end
 end  	
 
