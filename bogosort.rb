@@ -5,13 +5,14 @@ array_to_sort2 = [7,3,1,5,10,0,4]
 test_array = array_to_sort2
 
 bogosorted_array = test_array
+sorted_test_array = test_array.sort
 counter = 0
-until test_array.sort == bogosorted_array
+until sorted_test_array == bogosorted_array
   bogosorted_array.shuffle!
   puts counter += 1
 end
 
-puts test_array == bogosorted_array
+puts sorted_test_array == bogosorted_array
 puts "It took #{counter} bogosort attempts."  
 
 puts ((Time.now - start_time).to_f).to_s + "s"
