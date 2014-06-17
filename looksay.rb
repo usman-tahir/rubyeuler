@@ -18,8 +18,7 @@
 start_time = Time.now
 
 def look_say(number)
-  number_string = number.to_s
-  look_say_value = number_string.chars.chunk { |char| char }.map { |c,x| [x.size, c] }.join.to_i
+  look_say_value = number.to_s.chars.chunk { |char| char }.map { |c,x| [x.size, c] }.join.to_i
 end	
 
 puts number = 1
