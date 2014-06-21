@@ -5,13 +5,11 @@ array_to_sort2 = [7,3,1,5,10,0,4]
 test_array = array_to_sort1
 
 def selection_sort(array_to_sort)
-  iterations = array_to_sort.count
   array_to_sort.each_index do |index|
     min = index
-    swap_index = index
-    while swap_index < iterations
-      array_to_sort[min], array_to_sort[swap_index] = array_to_sort[swap_index], array_to_sort[min] if array_to_sort[min] > array_to_sort[swap_index]
-      swap_index += 1
+    while min < array_to_sort.count
+      array_to_sort[index], array_to_sort[min] = array_to_sort[min], array_to_sort[index] if array_to_sort[min] < array_to_sort[index]
+      min += 1
     end
   end
   array_to_sort		
