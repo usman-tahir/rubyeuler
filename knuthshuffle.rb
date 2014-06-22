@@ -4,7 +4,7 @@ test_array = [0,1,2,3,4,5,6,7,8,9]
 
 def knuth_shuffle(array_to_shuffle)
   array_to_shuffle.each_index do |index|
-    random_index = rand(array_to_shuffle.count-1)
+    random_index = rand(index-1)
     array_to_shuffle[index], array_to_shuffle[random_index] = array_to_shuffle[random_index], array_to_shuffle[index]
   end
   array_to_shuffle
