@@ -11,8 +11,6 @@ def nth(number)
     when number[-1] == "2" then postfix = "nd"
     when number[-1] == "3" then postfix = "rd"
     end
-  else
-    postfix = "th"
   end
   number << postfix	
 end
