@@ -5,13 +5,7 @@ def nth(number)
   postfix = "th"
   number = number.to_s
   number.length
-  if number.length == 1
-    case
-    when number[-1] == "1" then postfix = "st"
-    when number[-1] == "2" then postfix = "nd"
-    when number[-1] == "3" then postfix = "rd"
-    end
-  elsif number.length > 1 && number[-2] != "1"
+  if number[-2] != "1"
     case
     when number[-1] == "1" then postfix = "st"
     when number[-1] == "2" then postfix = "nd"
