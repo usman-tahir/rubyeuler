@@ -18,17 +18,9 @@ def cross_product(array1,array2)
   cross_product_result
 end
 
-def scalar_triple_product(array1,array2,array3)
-  scalar_triple_product_result = dot_product(array1, cross_product(array2,array3))
-end
-
-def vector_triple_product(array1,array2,array3)
-  vector_triple_product_result = cross_product(array1, cross_product(array2,array3))
-end
-
 puts "The dot product of a & b is " + dot_product(a,b).to_s
 puts "The cross product of a & b is " + cross_product(a,b).inspect
-puts "The scalar triple product of a, b & c is " + scalar_triple_product(a,b,c).to_s
-puts "The vector triple product of a, b & c is " + vector_triple_product(a,b,c).inspect
+puts "The scalar triple product of a, b & c is " + dot_product(a, cross_product(b,c)).to_s
+puts "The vector triple product of a, b & c is " + cross_product(a, cross_product(b,c)).inspect
 
 puts ((Time.now-start_time).to_f).to_s + "s"
