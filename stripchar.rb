@@ -3,7 +3,6 @@ start_time = Time.now
 test_string = "She was a soul stripper. She took my heart!"
 characters = "aei"
 
-
 def stripchars(string, chars)
   char_array = chars.split(//).map
   char_array.each do |char|
