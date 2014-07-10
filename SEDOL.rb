@@ -1,3 +1,4 @@
+# http://rosettacode.org/wiki/SEDOLs
 # http://en.wikipedia.org/wiki/SEDOL
 # 
 # The check digit for a SEDOL is chosen to make the total weighted sum of 
