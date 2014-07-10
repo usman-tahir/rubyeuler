@@ -55,7 +55,7 @@ def find_check_digit(string)
 end
 
 SEDOL_array.each do |sedol|
-  puts find_check_digit(sedol)
+  puts sedol + " / " + find_check_digit(sedol)
 end	
 
 puts ((Time.now-start_time).to_f).to_s + "s"
