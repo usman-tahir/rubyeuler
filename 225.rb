@@ -1,5 +1,7 @@
 # http://codegolf.stackexchange.com/questions/28786/write-a-program-that-makes-2-2-5
 
+two_plus_two = "2 + 2"
+
 class Fixnum
   alias :plus :+
 
@@ -9,4 +11,4 @@ class Fixnum
 
 end		
 
-puts "2 + 2 = " + (2 + 2).to_s
+puts two_plus_two + " = " + eval(two_plus_two).to_s
