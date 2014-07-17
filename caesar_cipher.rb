@@ -16,7 +16,7 @@ test_string1 = "HI"
 test_string2 = "JK"
 test_string3 = "The five boxing wizards jump quickly"
 
-
+# flag = "encode" for encoding && "decode" for decoding
 def caesar(string, key, flag)
   string_to_code = string.upcase.split(//).map.to_a
   cipher_key = LETTERS.rotate(key)
