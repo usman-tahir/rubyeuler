@@ -16,29 +16,21 @@ test_string1 = "HI"
 test_string2 = "JK"
 test_string3 = "The five boxing wizards jump quickly"
 
-def caesar_encode(string, key)
-  string_to_encode = string.upcase.split(//).map.to_a
+
+def caesar(string, key, flag)
+  string_to_code = string.upcase.split(//).map.to_a
   cipher_key = LETTERS.rotate(key)
-  string_to_encode.each_with_index do |character,position|
+  string_to_code.each_with_index do |character,position|
     next if character == " "
-    string_to_encode[position] = cipher_key[LETTERS.index(character)]
+    string_to_code[position] = cipher_key[LETTERS.index(character)] if flag == "encode"
+    string_to_code[position] = LETTERS[cipher_key.index(character)] if flag == "decode"
   end
-  string_to_encode.join
+  string_to_code.join
 end
 
-def caesar_decode(string, key)
-  string_to_decode = string.upcase.split(//).map.to_a
-  cipher_key = LETTERS.rotate(key)
-  string_to_decode.each_with_index do |character,position|
-    next if character == " "
-    string_to_decode[position] = LETTERS[cipher_key.index(character)]
-  end
-  string_to_decode.join  
-end
-
-puts caesar_encode(test_string1,20)
-puts caesar_encode(test_string3,3)
-puts caesar_decode(test_string2,2)
-puts caesar_decode(caesar_encode(test_string3,2),2)
+puts caesar(test_string1,20,"encode")
+puts caesar(test_string3,3,"encode")
+puts caesar(test_string2,2,"decode")
+puts caesar(caesar(test_string3,2,"encode"),2,"decode")
 
 puts ((Time.now-start_time).to_f).to_s + "s"	
