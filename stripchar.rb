@@ -1,16 +1,18 @@
 # http://rosettacode.org/wiki/Strip_a_set_of_characters_from_a_string
 start_time = Time.now
-test_string = "She was a soul stripper. She took my heart!"
+test_string1 = "She was a soul stripper. She took my heart!"
 characters = "aei"
 
-def stripchars(string, chars)
+test_string = test_string1
+
+def test_string.stripchars(chars)
   char_array = chars.split(//).map
   char_array.each do |char|
-    string.delete! char
+    self.delete! char
   end
-  string
+  self
 end
 
-puts stripchars(test_string,characters)
+puts test_string.stripchars(characters)
 puts ((Time.now-start_time).to_f).to_s + "s"
 

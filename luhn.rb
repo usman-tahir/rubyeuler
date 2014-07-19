@@ -3,10 +3,22 @@ start_time = Time.now
 numbers_to_validate = [49927398716,49927398717,1234567812345678,1234567812345670]
 
 def luhn_checksum(number)
-  number_array = number.to_s.reverse.split(//).map {|digit| digit.to_i}
+  number = number.to_s
+  number_length = number.length
   partial_sum_s1 = 0
   partial_sum_s2 = 0
-  number_array.each_index do |index|
+  number_index_counter == 0
+  until number_index_counter == number_length
+    partial_sum_s1 += number[number_index_counter].to_i if number_index_counter % 2 == 0
+    if number_index_counter % 2 != 0
+      case
+      when (number[number_index_counter].to_i*2) < 10
+      partial_sum_s2 += (number)
+    
+
+  number_array.each_char do |char|
+    partial_sum_s1 += char.to_i if char.to_i % 2 
+   
     partial_sum_s1 += number_array[index] if index % 2 == 0
     if index % 2 != 0
       case
