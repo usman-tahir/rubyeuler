@@ -1,37 +1,32 @@
 # http://rosettacode.org/wiki/100_doors
 start_time = Time.now
 
-doors =[]
-100.times do
-  doors << 0 # 0 for closed; 1 for open
-end   
-
-modulo_to_visit = 1
-while modulo_to_visit < 101
-  (0..99).each do |index|
-    if (index+1) % modulo_to_visit == 0
-      if doors[index] == 0
-        doors[index] = 1
-      elsif doors[index] == 1
-        doors[index] = 0
-      else
+def a_hundred_doors
+  doors =[]
+  100.times do
+    doors << 0 # 0 for closed; 1 for open
+  end   
+  pass = 1
+  while pass < 101
+    (0..99).each do |index|
+      if (index+1) % pass == 0
+        if doors[index] == 0 then doors[index] = 1
+        elsif doors[index] == 1 then doors[index] = 0
+        end
       end
-    else
     end
+    pass += 1
   end
-  modulo_to_visit += 1
-end  		  	   	
+  doors
+end 
 
-puts "Catalogue of doors:"
+doors = a_hundred_doors
+open_doors =[]
 doors.each_index do |index|
-  puts "door " + (index+1).to_s + " is open." if doors[index] == 1
-  puts "door " + (index+1).to_s + " is closed." if doors[index] == 0
+  open_doors << "Door " + (index+1).to_s if doors[index] == 1
 end
-puts "~~~"
 
-puts "The doors left open are:"
-  doors.each_index do |index|
-  puts "door " + (index+1).to_s + " is open." if doors[index] == 1
-end
+puts "Doors left open after 100 passes:"
+puts open_doors.inspect
 
 puts ((Time.now - start_time).to_f).to_s + "s"
