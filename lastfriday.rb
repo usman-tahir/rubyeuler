@@ -12,12 +12,12 @@ def find_last_friday(year)
   fridays.each_index do |index|
     break if fridays[index+1] == nil
     if fridays[index+1].month > fridays[index].month
-      last_fridays << fridays[index]
+      last_fridays << fridays[index].asctime
     end
   end
-  last_fridays << fridays[-1] # last Fri of the year
-  puts last_fridays
+  last_fridays << fridays[-1].asctime # last Fri of the year
+  last_fridays
 end
 
-find_last_friday(2012)
+puts find_last_friday(2012)
 puts ((Time.now - start_time).to_f).to_s + "s"
