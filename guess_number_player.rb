@@ -31,7 +31,10 @@ until number_guessed == true
     guess = random_guess(low_value,high_value)
     counter += 1
   else
+    next
   end
+  puts "! it has to be #{low_value}" if low_value == high_value
+  exit if low_value == high_value
 end  	
 
 try = "try" if counter == 1
