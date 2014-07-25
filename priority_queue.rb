@@ -14,7 +14,7 @@
 #  2        Tax return
 #
 start_time = Time.now
-p_q = Array.new(5, nil)
+p_q = Array.new
 
 def p_q.insert_item(priority,item)
   self[priority-1] = item
