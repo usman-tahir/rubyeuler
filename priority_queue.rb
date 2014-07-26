@@ -17,8 +17,7 @@ start_time = Time.now
 p_q = Array.new
 
 def p_q.insert_item(priority,item)
-  self[priority-1] = item if self[priority-1] == nil
-  self.insert(priority-1,item) if self.count <= (priority-1) && self[priority-1] != nil
+  self[priority-1] = item 
 end 
 
 def p_q.pop_item
@@ -31,14 +30,10 @@ p_q.insert_item(5,"Make tea")
 p_q.insert_item(1,"Solve RC Tasks")
 p_q.insert_item(2,"Tax return")
 
-p_q.insert_item(3,"Brush beast")
-puts p_q.inspect
-
 counter = 1
 (p_q.count).times do
   puts counter.to_s + ": " + p_q.pop_item
   counter += 1
 end	
-
 
 puts ((Time.now-start_time).to_f).to_s + "s"
