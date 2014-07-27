@@ -43,8 +43,8 @@ puts deque.ex_last.inspect
 puts deque.ex_first.inspect
 
 until deque.empty? == true
-puts deque.remove_last if deque.size.even?
-puts deque.remove_first if deque.size.odd?
+  puts deque.remove_last if deque.size.even?
+  puts deque.remove_first if deque.size.odd?
 end	
 
 puts deque.empty?
