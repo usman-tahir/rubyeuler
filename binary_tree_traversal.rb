@@ -27,14 +27,14 @@ def tree.level_order
 end	
 
 base_index = 0
-tree.insert(base_index,1)
-tree.insert(((2*base_index)+1),2)
-tree.insert(((2*base_index)+2),3)
-tree.insert(((2*((2*base_index)+1))+1),4)
-tree.insert(((2*((2*base_index)+1))+2),5)
-tree.insert(((2*((2*base_index)+2))+1),6)
-tree.insert((2*((2*((2*base_index)+1))+1)+1),7)
-tree.insert((2*((2*((2*base_index)+2))+1)+1),8)
-tree.insert((2*((2*((2*base_index)+2))+1)+2),9)
+tree.insert_element(1,base_index)
+tree.insert_element(2,((2*base_index)+1))
+tree.insert_element(3,((2*base_index)+2))
+tree.insert_element(4,((2*((2*base_index)+1))+1))
+tree.insert_element(5,((2*((2*base_index)+1))+2))
+tree.insert_element(6,((2*((2*base_index)+2))+1))
+tree.insert_element(7,(2*((2*((2*base_index)+1))+1)+1))
+tree.insert_element(8,(2*((2*((2*base_index)+2))+1)+1))
+tree.insert_element(9,(2*((2*((2*base_index)+2))+1)+2))
 
 puts tree.inspect
