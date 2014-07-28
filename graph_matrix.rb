@@ -10,7 +10,7 @@
 # 1 if there is an edge
 #
 # points to set
-# 1,5; 1,2; 1,3; 2,1; 3,1; 4,5; 5,1; 5,4
+# points_array = ["(1,5)","(1,2)","(1,3)","(2,1)","(3,1)","(4,5)","(5,1)","(5,4)"]
 require 'matrix'
 graph_matrix = Matrix.build(5,5) {0}
 
@@ -32,6 +32,11 @@ graph_matrix.set_edge(2,1)
 graph_matrix.set_edge(4,5)
 graph_matrix.set_edge(5,1)
 graph_matrix.set_edge(5,4)
+
+#points_array.each do |vertex_string|
+#	vertex = eval vertex_string
+#	graph_matrix.set_edge(vertex)
+#end	
 
 puts "1 is connected to 2: " + graph_matrix.connected?(1,2).to_s
 puts "1 is connected to 3: " + graph_matrix.connected?(1,3).to_s
