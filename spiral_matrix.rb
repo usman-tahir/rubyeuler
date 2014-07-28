@@ -19,7 +19,8 @@ def spiral_matrix.pretty_print
 end	
 
 row = 0
-col = 0
+col = 0 
+# range = 0 to SPIRAL_SIZE**2 - 1
 (0..((SPIRAL_SIZE**2)-1)).each do |number|
   spiral_matrix.update_element(row,col,number) if spiral_matrix.show_element(row,col) == "empty"
   case
