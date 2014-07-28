@@ -1,9 +1,10 @@
 # http://rosettacode.org/wiki/Spiral_matrix
 require 'matrix'
 start_time = Time.now
-SPIRAL_SIZE = 5
+
+# change SPIRAL_SIZE value to alter the size of the spiral array
+SPIRAL_SIZE = 5 
 spiral_matrix = Matrix.build(SPIRAL_SIZE,SPIRAL_SIZE) {"empty"}
-direction = "right"
 
 def spiral_matrix.update_element(row,col,element)
   self.send :[]=,row,col,element
@@ -15,7 +16,7 @@ end
 
 row = 0
 col = 0
-(0..24).each do |number|
+(0..((SPIRAL_SIZE**2)-1)).each do |number|
   spiral_matrix.update_element(row,col,number) if spiral_matrix.show_element(row,col) == "empty"
   case
   when spiral_matrix.show_element(row,col+1) == "empty"
