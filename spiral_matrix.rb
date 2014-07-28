@@ -15,7 +15,7 @@ def spiral_matrix.show_element(row,col)
 end	
 
 def spiral_matrix.pretty_print
-  puts self.to_a.map(&:inspect)
+  self.to_a.map(&:inspect)
 end	
 
 row = 0
@@ -47,5 +47,5 @@ col = 0
   #puts col.to_s + "," + row.to_s
 end  	
 
-spiral_matrix.pretty_print
+puts spiral_matrix.pretty_print
 puts ((Time.now-start_time).to_f).to_s + "s"
