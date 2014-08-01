@@ -1,4 +1,5 @@
 # http://rosettacode.org/wiki/Integer_sequence
+max_limit = "infinity"
 
 def display_int_seq_to(number)
   counter = 1
@@ -8,4 +9,4 @@ def display_int_seq_to(number)
   end
 end
 
-display_int_seq_to("infinity")
+display_int_seq_to(max_limit)
