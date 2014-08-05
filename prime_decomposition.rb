@@ -6,7 +6,6 @@ require 'prime'
 # test values from AWK example here: http://rosettacode.org/wiki/Prime_decomposition#AWK
 test_array = [36, 77, 536870911, 8796093022207]
 
-
 def prime_decomposition(number)
   prime_factors = number.prime_division.flatten!
   prime_factors.delete(1)
