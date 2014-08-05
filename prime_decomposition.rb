@@ -13,5 +13,5 @@ def prime_decomposition(number)
 end
 
 test_array.each do |number|
-  puts prime_decomposition(number).inspect
+  puts number.to_s + ": " + prime_decomposition(number).inspect
 end  
