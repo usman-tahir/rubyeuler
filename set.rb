@@ -51,6 +51,6 @@ puts "The union of sets {1,2,3} and {4,5,6} is: " + set_union(test_array,test_ar
 puts "The difference between set {1,2,3} and set {3,4,5} is: " + set_difference(test_array,test_array2).inspect.to_s
 puts "Are set A {1,2,3} and set B {1,2,3} equal? " + set_equality(test_array,test_array4).to_s
 puts "Are set A {1,2,3} and set B {4,5,6} equal? " + set_equality(test_array,test_array3).to_s
-puts "The intersection of sets {1,2,3} and {4,5,6} is: " + set_intersection(test_array,test_array2).to_s
+puts "The intersection of sets {1,2,3} and {3,4,5} is: " + set_intersection(test_array,test_array2).to_s
 puts "Is {1,2,3} a subset of {1,2,3,4,5,6}? " + set_subset(test_array,(set_union(test_array,test_array3))).to_s
 puts "Is {1,2,3} a subset of {3,4,5,6}? " + set_subset(test_array,(set_union(test_array2,test_array3))).to_s
