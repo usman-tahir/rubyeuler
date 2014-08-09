@@ -3,7 +3,7 @@
 def create_set(*element)
   elements =[]
   elements << element
-  elements.flatten!
+  elements.flatten!.uniq
 end
 
 def is_element_in_set?(element, set)
@@ -11,7 +11,7 @@ def is_element_in_set?(element, set)
 end
 
 def set_union(first_array,second_array)
-  first_array + second_array
+  (first_array + second_array).uniq
 end
 
 def set_intersection(first_array,second_array)
@@ -45,12 +45,12 @@ test_array2 = create_set(3,4,5)
 test_array3 = create_set(4,5,6)
 test_array4 = create_set(1,2,3)
 
-puts "Is 1 in set {1,2,3}? : " + is_element_in_set?(1,test_array).to_s
-puts "Is 4 in set {1,2,3}? : " + is_element_in_set?(4,test_array).to_s
-puts "The union of sets {1,2,3} and {4,5,6} is: " + set_union(test_array,test_array3).inspect.to_s
-puts "The difference between set {1,2,3} and set {3,4,5} is: " + set_difference(test_array,test_array2).inspect.to_s
-puts "Are set A {1,2,3} and set B {1,2,3} equal? " + set_equality(test_array,test_array4).to_s
-puts "Are set A {1,2,3} and set B {4,5,6} equal? " + set_equality(test_array,test_array3).to_s
-puts "The intersection of sets {1,2,3} and {3,4,5} is: " + set_intersection(test_array,test_array2).to_s
-puts "Is {1,2,3} a subset of {1,2,3,4,5,6}? " + set_subset(test_array,(set_union(test_array,test_array3))).to_s
-puts "Is {1,2,3} a subset of {3,4,5,6}? " + set_subset(test_array,(set_union(test_array2,test_array3))).to_s
+puts "Is 1 in set #{test_array.inspect}? : " + is_element_in_set?(1,test_array).to_s
+puts "Is 4 in set #{test_array.inspect}? : " + is_element_in_set?(4,test_array).to_s
+puts "The union of sets #{test_array.inspect} and #{test_array3.inspect} is: " + set_union(test_array,test_array3).inspect.to_s
+puts "The difference between set #{test_array.inspect} and set #{test_array2.inspect} is: " + set_difference(test_array,test_array2).inspect.to_s
+puts "Are set A #{test_array.inspect} and set B #{test_array4.inspect} equal? " + set_equality(test_array,test_array4).to_s
+puts "Are set A #{test_array.inspect} and set B #{test_array3.inspect} equal? " + set_equality(test_array,test_array3).to_s
+puts "The intersection of sets #{test_array.inspect} and #{test_array2.inspect} is: " + set_intersection(test_array,test_array2).to_s
+puts "Is #{test_array.inspect} a subset of #{set_union(test_array,test_array3).inspect}? " + set_subset(test_array,(set_union(test_array,test_array3))).to_s
+puts "Is #{test_array.inspect} a subset of #{set_union(test_array2,test_array3).inspect}? " + set_subset(test_array,(set_union(test_array2,test_array3))).to_s
