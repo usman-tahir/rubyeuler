@@ -4,7 +4,7 @@ pandigital_numbers = [0,1,2,3,4,5,6,7,8,9]
 pandigital_permutations = pandigital_numbers.permutation.to_a
 
 def pandigital_permutations.substring_divisible?
-  have_substring_divisble_property =[]
+  have_substring_divisible_property =[]
   self.each do |number|
     next if number[0] == "0"
     trial_number = (number[0].to_s +
@@ -24,7 +24,7 @@ def pandigital_permutations.substring_divisible?
             if trial_number[5..7].to_i % 11 == 0
               if trial_number[6..8].to_i % 13 == 0
                 if trial_number[7..9].to_i % 17 == 0
-                  have_substring_divisble_property << trial_number.to_i
+                  have_substring_divisible_property << trial_number.to_i
                 end
               end
             end
@@ -33,7 +33,7 @@ def pandigital_permutations.substring_divisible?
       end
     end
   end  
-  have_substring_divisble_property
+  have_substring_divisible_property
 end
 
 puts pandigital_permutations.substring_divisible?.inject(:+)  
