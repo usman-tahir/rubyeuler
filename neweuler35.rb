@@ -16,7 +16,7 @@ end
 
 def find_circular_primes_below(number)
   circular_primes_array = []
-  Prime.each(1_000_000) do |num|
+  Prime.each(number) do |num|
     circular_primes_array << num if is_circular_prime?(num)
   end
   circular_primes_array
