@@ -1,6 +1,4 @@
-start_time = Time.new
-x = Array.new
-x = "73167176531330624919225119674426574742355349194934
+digits_array = "73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843
 85861560789112949495459501737958331952853208805511
 12540698747158523863050715693290963295227443043557
@@ -22,17 +20,18 @@ x = "73167176531330624919225119674426574742355349194934
 71636269561882670428252483600823257530420752963450".split('').map(&:to_i)
 
 # test products of five consecutive digits
-i = 0
-largest_product = 0
 
-while i < 1000
-	y = x[i].to_i * x[i + 1].to_i * x[i + 2].to_i * x[i + 3].to_i * x[i + 4].to_i
-	if largest_product < y
-		largest_product = y
-	else
-	end
-	i = i + 1
-end
+def digits_array.find_largest_product
+  counter = 0
+  largest_product = 0
+  while counter < 1000
+	  y = self[counter].to_i * self[counter + 1].to_i * self[counter + 2].to_i * self[counter + 3].to_i * self[counter + 4].to_i
+	  if largest_product < y
+		  largest_product = y
+	  end
+	  counter += 1
+  end
+  largest_product
+end    
 
-p largest_product
-printf("Run time %.4f s\n", Time.new - start_time)
+puts digits_array.find_largest_product
