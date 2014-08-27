@@ -43,4 +43,35 @@ class Array
     self.inject(:+)
   end
 
+end  
+
+class FiboGenerator
+  
+  # This generator starts with 0 as the zero-indexed term.
+  # If the sequence should start with 1, keep the offset in mind.
+
+  def initialize
+    @fibo_numbers = [0,1]
+  end  
+
+  def next
+    @fibo_numbers << @fibo_numbers[-1] + @fibo_numbers[-2]
+    @fibo_numbers[-1]
+  end  
+
+  def generate(n)
+    until @fibo_numbers.count == n
+      self.next
+    end
+    @fibo_numbers
+  end    
+
+  def show
+    @fibo_numbers
+  end  
+
+  def count
+    @fibo_numbers.count
+  end  
+
 end
