@@ -10,6 +10,12 @@ class Numeric
 end
 
 class Fixnum
+  def factorial
+    factorial = 1
+    self.downto(1) {|number| factorial *= number }
+    factorial
+  end 
+
   def divisors
     dvsrs = []
     1.upto(self-1).each do |number|
@@ -28,8 +34,8 @@ class Fixnum
 
   def deficient?
     self > self.divisors.sum
-  end    
-  
+  end 
+
 end
 
 class Array
