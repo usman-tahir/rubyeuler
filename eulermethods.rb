@@ -11,9 +11,9 @@ class Numeric
     self.to_s.reverse.to_i
   end
   
-  def is_palindrome?
+  def palindrome?
     self == self.to_s.reverse.to_i
-  end  
+  end
 
 end
 
@@ -43,6 +43,17 @@ class Fixnum
   def deficient?
     self > self.divisors.sum
   end 
+
+  def lyrchrel?
+    test_array = []
+    temp_value = self
+    until test_array.count == 50 || (test_array.count > 0 && test_array[-1].palindrome?)
+      temp_value = temp_value + temp_value.reverse
+      test_array << temp_value
+      break if temp_value.palindrome?
+    end
+    !test_array[-1].palindrome?
+  end  
 
 end
 
