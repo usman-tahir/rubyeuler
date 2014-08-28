@@ -7,6 +7,14 @@ class Numeric
     self.to_s.split(//).map { |digit| digit.to_i }
   end  
 
+  def reverse
+    self.to_s.reverse.to_i
+  end
+  
+  def is_palindrome?
+    self == self.to_s.reverse.to_i
+  end  
+
 end
 
 class Fixnum
