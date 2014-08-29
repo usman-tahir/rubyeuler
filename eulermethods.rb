@@ -73,7 +73,7 @@ class FiboGenerator
 
   def initialize(first_term=0)
     @fibo_numbers = [0,1] if first_term == 0
-    @fibo_numbers = [1,2] if first_term == 1
+    @fibo_numbers = [1,2] if first_term != 0
   end  
 
   def next
