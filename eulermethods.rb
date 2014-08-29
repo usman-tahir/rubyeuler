@@ -1,3 +1,5 @@
+require 'prime'
+
 class Numeric
   def length
     self.to_s.length
