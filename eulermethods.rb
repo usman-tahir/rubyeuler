@@ -12,7 +12,7 @@ class Numeric
   end
   
   def palindrome?
-    self == self.to_s.reverse.to_i
+    self == self.reverse
   end
 
 end
