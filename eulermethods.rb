@@ -66,8 +66,8 @@ end
 
 class FiboGenerator
   
-  # This generator starts with 0 as the zero-indexed term.
-  # If the sequence should start with 1, keep the offset in mind.
+  # This generator starts with 0 as the zero-indexed term by default.
+  # Initialize it with FiboGenerator.new(1) to use 1 as zero-indexed term.
 
   attr_reader :zero_index
 
