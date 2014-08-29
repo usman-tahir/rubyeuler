@@ -69,8 +69,11 @@ class FiboGenerator
   # This generator starts with 0 as the zero-indexed term.
   # If the sequence should start with 1, keep the offset in mind.
 
-  def initialize
-    @fibo_numbers = [0,1]
+  attr_reader :first_term
+
+  def initialize(first_term=0)
+    @fibo_numbers = [0,1] if first_term == 0
+    @fibo_numbers = [1,2] if first_term == 1
   end  
 
   def next
