@@ -17,6 +17,22 @@ class Numeric
     self == self.reverse
   end
 
+  def triangular?
+    (Math.sqrt((8 * self) + 1)) % 1 == 0
+  end    
+
+  def square?
+    (Math.sqrt(self)) % 1 == 0
+  end  
+
+  def pentagonal?
+    ((Math.sqrt((24 * self) + 1) + 1) / 6) % 1 == 0
+  end
+
+  def hexagonal?
+    ((Math.sqrt((8 * self) + 1) + 1) /  4) % 1 == 0
+  end
+
 end
 
 class Fixnum
