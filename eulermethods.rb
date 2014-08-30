@@ -33,6 +33,12 @@ class Numeric
     ((Math.sqrt((8 * self) + 1) + 1) /  4) % 1 == 0
   end
 
+  def pandigital?
+    comparison = (1..self.length).to_a
+    test = self.to_a.sort
+    test == comparison
+  end
+
 end
 
 class Fixnum
