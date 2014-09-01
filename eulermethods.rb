@@ -83,6 +83,15 @@ class Fixnum
     self.divisors.count > 0
   end 
 
+  def next_prime
+  result_number = self + 1 if self.even?
+  result_number = self + 2 if self.odd?
+  until result_number.prime?
+    result_number += 2
+  end
+  result_number
+end
+
 end
 
 class Array
