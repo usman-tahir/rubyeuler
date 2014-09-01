@@ -1,4 +1,5 @@
 # http://projecteuler.net/problem=46
+require 'prime'
 load 'eulermethods.rb'
 
 def gen_primes_to_test(number)
