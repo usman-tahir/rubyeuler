@@ -13,32 +13,6 @@ class Numeric
     self.to_s.reverse.to_i
   end
   
-  def palindrome?
-    self == self.reverse
-  end
-
-  def triangular?
-    (Math.sqrt((8 * self) + 1)) % 1 == 0
-  end    
-
-  def square?
-    (Math.sqrt(self)) % 1 == 0
-  end  
-
-  def pentagonal?
-    ((Math.sqrt((24 * self) + 1) + 1) / 6) % 1 == 0
-  end
-
-  def hexagonal?
-    ((Math.sqrt((8 * self) + 1) + 1) /  4) % 1 == 0
-  end
-
-  def pandigital?
-    comparison = (1..self.length).to_a
-    test = self.to_a.sort
-    test == comparison
-  end
-
 end
 
 class Fixnum
@@ -50,7 +24,7 @@ class Fixnum
 
   def divisors
     dvsrs = []
-    1.upto(self-1).each do |number|
+    2.upto(self-1).each do |number|
       dvsrs << number if self % number == 0
     end
     dvsrs
@@ -78,6 +52,32 @@ class Fixnum
     end
     !test_array[-1].palindrome?
   end  
+
+  def palindrome?
+    self == self.reverse
+  end
+
+  def triangular?
+    (Math.sqrt((8 * self) + 1)) % 1 == 0
+  end    
+
+  def square?
+    (Math.sqrt(self)) % 1 == 0
+  end  
+
+  def pentagonal?
+    ((Math.sqrt((24 * self) + 1) + 1) / 6) % 1 == 0
+  end
+
+  def hexagonal?
+    ((Math.sqrt((8 * self) + 1) + 1) /  4) % 1 == 0
+  end
+
+  def pandigital?
+    comparison = (1..self.length).to_a
+    test = self.to_a.sort
+    test == comparison
+  end
 
 end
 
