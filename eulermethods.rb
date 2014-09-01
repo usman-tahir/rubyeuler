@@ -12,6 +12,10 @@ class Numeric
   def reverse
     self.to_s.reverse.to_i
   end
+
+  def palindrome?
+    self == self.reverse
+  end
   
 end
 
@@ -42,7 +46,7 @@ class Fixnum
     self > self.divisors.sum
   end 
 
-  def lyrchrel?
+  def lychrel?
     test_array = []
     temp_value = self
     until test_array.count == 50 || (test_array.count > 0 && test_array[-1].palindrome?)
@@ -52,10 +56,6 @@ class Fixnum
     end
     !test_array[-1].palindrome?
   end  
-
-  def palindrome?
-    self == self.reverse
-  end
 
   def triangular?
     (Math.sqrt((8 * self) + 1)) % 1 == 0

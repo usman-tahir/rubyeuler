@@ -2,7 +2,7 @@
 load 'eulermethods.rb'
 
 class Fixnum
-  def lyrchrel?
+  def lychrel?
     test_array = []
     temp_value = self
     until test_array.count == 50 || (test_array.count > 0 && test_array[-1].palindrome?)
@@ -18,7 +18,7 @@ end
 def find_lychrel_numbers_below_ten_thousand
   lychrels = []
   (1..9999).each do |number_to_test|
-    lychrels << number_to_test if number_to_test.lyrchrel?
+    lychrels << number_to_test if number_to_test.lychrel?
   end
   lychrels.count
 end
