@@ -1,5 +1,3 @@
-require 'prime'
-
 class Numeric
   def length
     self.to_s.length
@@ -78,6 +76,14 @@ class Fixnum
     test = self.to_a.sort
     test == comparison
   end
+
+  def composite?
+    self.divisors.count > 0
+  end  
+
+  def prime?
+    self.divisors.count == 0
+  end  
 
 end
 

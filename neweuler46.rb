@@ -33,7 +33,6 @@ def find_smallest_odd_composite
   counter = 9
   until writeable_as_prime_2x_square?(counter) == false
     counter = gen_next_odd_composite(counter)
-    puts counter
   end
   counter
 end
