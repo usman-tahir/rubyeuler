@@ -88,6 +88,7 @@ class Fixnum
     result_number = self + 2 if self.odd?
     until result_number.prime?
       result_number += 2
+      result_number += 2 if result_number % 5 == 0
     end
     result_number
   end
