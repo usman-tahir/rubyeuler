@@ -1,7 +1,7 @@
 # http://projecteuler.net/problem=112
 bouncy_number_attempt = 1587000
 # this is an idiotic way to do this but I manually tried different numbers
-# for bouncy_number_attempt to narrow the possibilities until line 30 == 0.99
+# for bouncy_number_attempt to narrow the possibilities until line 26 == 0.99
 
 def bouncy_test(number)
   stringified_number = number.to_s
