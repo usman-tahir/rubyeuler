@@ -114,13 +114,7 @@ class Fixnum
   end  
 
   def bouncy?
-    number_string = self.to_s
-    bouncy =[]
-    (0..number_string.length-2).each do |index|
-      bouncy.push "true" if number_string[index].to_i < number_string[index+1].to_i
-      bouncy.push "false" if number_string[index].to_i > number_string[index+1].to_i
-    end
-    bouncy.include?("true") && bouncy.include?("false")
+    !self.increasing? && !self.decreasing?
   end
 
 end
