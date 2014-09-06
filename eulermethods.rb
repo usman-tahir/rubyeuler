@@ -93,15 +93,34 @@ class Fixnum
     result_number
   end
 
-  def bouncy?
-    stringified_number = self.to_s
-    bouncy =[]
-    stringifield_length = stringified_number.length - 2 # keep from reaching nil values
-    (0..stringifield_length).each do |index|
-      bouncy.push "true" if stringified_number[index].to_i < stringified_number[index+1].to_i
-      bouncy.push "false" if stringified_number[index].to_i > stringified_number[index+1].to_i
+  def increasing?
+    number_string = self.to_s
+    test_array = []
+    (0..number_string.length-2).each do |index|
+      test_array.push "true" if number_string[index].to_i < number_string[index+1].to_i
+      test_array.push "false" if number_string[index].to_i > number_string[index+1].to_i
     end
-    bouncy.count("true") != 0 && bouncy.count("false") !=0 ? true : false
+    !test_array.include?("false")  
+  end
+  
+  def decreasing?  
+    number_string = self.to_s
+    test_array = []
+    (0..number_string.length-2).each do |index|
+      test_array.push "true" if number_string[index].to_i > number_string[index+1].to_i
+      test_array.push "false" if number_string[index].to_i < number_string[index+1].to_i
+    end
+    !test_array.include?("false")
+  end  
+
+  def bouncy?
+    number_string = self.to_s
+    bouncy =[]
+    (0..number_string.length-2).each do |index|
+      bouncy.push "true" if number_string[index].to_i < number_string[index+1].to_i
+      bouncy.push "false" if number_string[index].to_i > number_string[index+1].to_i
+    end
+    bouncy.include?("true") && bouncy.include?("false")
   end
 
 end
