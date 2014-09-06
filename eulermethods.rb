@@ -95,22 +95,20 @@ class Fixnum
 
   def increasing?
     number_string = self.to_s
-    test_array = []
+    increasing_flag = true
     (0..number_string.length-2).each do |index|
-      test_array.push "true" if number_string[index].to_i < number_string[index+1].to_i
-      test_array.push "false" if number_string[index].to_i > number_string[index+1].to_i
+      increasing_flag = false if number_string[index].to_i > number_string[index+1].to_i
     end
-    !test_array.include?("false")  
+    increasing_flag
   end
   
   def decreasing?  
     number_string = self.to_s
-    test_array = []
+    decreasing_flag = true
     (0..number_string.length-2).each do |index|
-      test_array.push "true" if number_string[index].to_i > number_string[index+1].to_i
-      test_array.push "false" if number_string[index].to_i < number_string[index+1].to_i
+      decreasing_flag = false if number_string[index].to_i < number_string[index+1].to_i
     end
-    !test_array.include?("false")
+    decreasing_flag
   end  
 
   def bouncy?
