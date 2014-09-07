@@ -27,12 +27,18 @@ class Fixnum
   end 
 
   def divisors
-    dvsrs = []
-    2.upto(self-1).each do |number|
-      dvsrs << number if self % number == 0
-    end
-    dvsrs
-  end   
+    1.upto(Math.sqrt(self)).select {|i| (self % i).zero?}.inject([]) do |f, i| 
+      f << i
+      f << self / i unless i == self / i
+      f
+    end.sort
+  end
+
+  def sum_divisors
+    dvsrs = self.divisors
+    dvsrs.delete_at(-1) if dvsrs.count > 1
+    dvsrs.sum
+  end  
 
   def abundant?
     self < self.divisors.sum
@@ -80,7 +86,7 @@ class Fixnum
   end
 
   def composite?
-    self.divisors.count > 0
+    self.divisors.count > 1
   end 
 
   def next_prime
