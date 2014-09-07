@@ -41,15 +41,15 @@ class Fixnum
   end  
 
   def abundant?
-    self < self.divisors.sum
+    self < self.sum_divisors
   end
 
   def perfect?
-    self == self.divisors.sum
+    self == self.sum_divisors
   end
 
   def deficient?
-    self > self.divisors.sum
+    self > self.sum_divisors
   end 
 
   def lychrel?
@@ -86,7 +86,7 @@ class Fixnum
   end
 
   def composite?
-    self.divisors.count > 1
+    self.divisors.count > 2
   end 
 
   def next_prime
