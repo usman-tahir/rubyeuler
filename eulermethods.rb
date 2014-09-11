@@ -40,6 +40,15 @@ class Fixnum
     dvsrs.sum
   end  
 
+  def permutations
+    temp_array = self.to_a.permutation.to_a
+    result_array =[]
+    temp_array.each do |array|
+      result_array << array.join.to_i
+    end
+    result_array  
+  end 
+
   def abundant?
     self < self.sum_divisors
   end
