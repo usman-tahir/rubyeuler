@@ -98,6 +98,14 @@ class Fixnum
     self.divisors.count > 2
   end 
 
+  def rational_square_root?
+    Math.sqrt(self) % 1 == 0
+  end
+  
+  def rational_cube_root?
+    Math.cbrt(self) % 1 == 0
+  end    
+
   def next_prime
     result_number = self + 1 if self.even?
     result_number = self + 2 if self.odd?
