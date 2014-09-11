@@ -7,14 +7,6 @@ class Numeric
 
   def to_a
     self.to_s.split(//).map { |digit| digit.to_i }
-  end  
-
-  def reverse
-    self.to_s.reverse.to_i
-  end
-
-  def palindrome?
-    self == self.reverse
   end
   
 end
@@ -138,6 +130,14 @@ class Fixnum
     !self.increasing? && !self.decreasing?
   end
 
+  def reverse
+    self.to_s.reverse.to_i
+  end
+
+  def palindrome?
+    self == self.reverse
+  end
+  
 end
 
 class Array
