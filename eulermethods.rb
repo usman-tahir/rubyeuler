@@ -138,7 +138,7 @@ class Fixnum
     self == self.reverse
   end
   
-  def digit_sum
+  def sum_digits
     self.to_a.sum
   end  
 
