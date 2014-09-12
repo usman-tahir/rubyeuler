@@ -138,6 +138,10 @@ class Fixnum
     self == self.reverse
   end
   
+  def digit_sum
+    self.to_a.sum
+  end  
+
 end
 
 class Array
