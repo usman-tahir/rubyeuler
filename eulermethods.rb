@@ -142,6 +142,20 @@ class Fixnum
     self.to_a.sum
   end  
 
+  def prime_seive
+    primes = (2..self).to_a
+    index_counter = 0
+    until index_counter >= primes.count  
+      primes.each do |number|
+        if number != primes[index_counter]
+          primes.delete(number) if number % primes[index_counter] == 0
+        end  
+      end
+      index_counter += 1
+    end          
+    primes
+  end
+
 end
 
 class Array
