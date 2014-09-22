@@ -41,11 +41,13 @@ def divide(x,y)
   end       
 end
 
-def modulo(x,y)
+def modulus(x,y)
+  subtract(x,(multiply(y,(divide(x,y)))))
 end  
 
 def exponent(x,y)
 end  
 
 puts multiply(5,20)
-puts divide(700,7)
+puts divide(5,3)
+puts modulus(5,3)
