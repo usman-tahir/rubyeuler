@@ -1,5 +1,9 @@
+def iszero(x)
+  x == 0
+end  
+
 def add(x,y)
-  if y == 0
+  if iszero(y)
     x
   else
     x = x.succ
@@ -9,7 +13,7 @@ def add(x,y)
 end
 
 def subtract(x,y)
-  if y == 0
+  if iszero(y)
     x
   else
     x = x.pred
@@ -19,9 +23,9 @@ def subtract(x,y)
 end
 
 def multiply(x,y)
-  if y == 0
+  if iszero(y)
     0
-  elsif y == 1
+  elsif iszero(y.pred)
     x
   else
     y = y.pred
@@ -30,9 +34,9 @@ def multiply(x,y)
 end
 
 def divide(x,y)
-  if y == 0
+  if iszero(y)
     raise "Can't divide by zero."
-  elsif x == 0
+  elsif iszero(x)
     0  
   elsif subtract(x,y) < y
     1
