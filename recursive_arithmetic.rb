@@ -37,7 +37,8 @@ def divide(x,y)
   elsif x < add(y,y)
     1
   else
-    (1 + divide((x-y),y))  
+    x = x-y
+    (add(1,divide(x,y)))  
   end       
 end
 
@@ -49,5 +50,6 @@ def exponent(x,y)
 end  
 
 puts multiply(5,20)
-puts divide(10,7)
+puts divide(35,7)
 puts modulus(10,7)
+#puts exponent(3,3)
