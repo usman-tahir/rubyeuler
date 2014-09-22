@@ -24,7 +24,7 @@ end
 
 def multiply(x,y)
   if iszero(y)
-    0
+    y
   elsif iszero(y.pred)
     x
   else
