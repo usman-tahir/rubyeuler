@@ -49,5 +49,5 @@ def exponent(x,y)
 end  
 
 puts multiply(5,20)
-puts divide(5,3)
-puts modulus(5,3)
+puts divide(10,7)
+puts modulus(10,7)
