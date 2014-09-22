@@ -32,6 +32,8 @@ end
 def divide(x,y)
   if y == 0
     raise "Can't divide by zero."
+  elsif x == 0
+    0  
   elsif subtract(x,y) == 0
     1
   elsif x < add(y,y)
@@ -50,6 +52,6 @@ def exponent(x,y)
 end  
 
 puts multiply(5,20)
-puts divide(35,7)
+puts divide(0,7)
 puts modulus(10,7)
 #puts exponent(3,3)
