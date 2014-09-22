@@ -31,7 +31,7 @@ end
 
 def divide(x,y)
   if y == 0
-    0
+    raise "Can't divide by zero."
   elsif subtract(x,y) == 0
     1
   elsif x < add(y,y)
