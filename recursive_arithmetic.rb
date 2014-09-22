@@ -29,7 +29,16 @@ def multiply(x,y)
   end     
 end
 
-def divide(x,y)    
+def divide(x,y)
+  if y == 0
+    0
+  elsif subtract(x,y) == 0
+    1
+  elsif x < add(y,y)
+    1
+  else
+    (1 + divide((x-y),y))  
+  end       
 end
 
 def modulo(x,y)
@@ -39,3 +48,4 @@ def exponent(x,y)
 end  
 
 puts multiply(5,20)
+puts divide(700,7)
