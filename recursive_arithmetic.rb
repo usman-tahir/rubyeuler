@@ -50,10 +50,16 @@ def modulus(x,y)
   subtract(x,(multiply(y,(divide(x,y)))))
 end  
 
-def exponent(x,y)
+def power(x,y)
+  if iszero(y)
+    1
+  else
+    y = y.pred
+    multiply(x,(power(x,y)))
+  end    
 end  
 
-#puts multiply(5,20)
-puts divide(9,5)
-#puts modulus(10,7)
-#puts exponent(3,3)
+puts multiply(5,20)
+puts divide(20,5)
+puts modulus(10,7)
+puts power(3,4)
