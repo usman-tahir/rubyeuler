@@ -1,9 +1,9 @@
-def iszero(x)
+def is_zero(x)
   x == 0
 end  
 
 def add(x,y)
-  if iszero(y)
+  if is_zero(y)
     x
   else
     x = x.succ
@@ -13,7 +13,7 @@ def add(x,y)
 end
 
 def subtract(x,y)
-  if iszero(y)
+  if is_zero(y)
     x
   else
     x = x.pred
@@ -23,9 +23,9 @@ def subtract(x,y)
 end
 
 def multiply(x,y)
-  if iszero(y)
+  if is_zero(y)
     y
-  elsif iszero(y.pred)
+  elsif is_zero(y.pred)
     x
   else
     y = y.pred
@@ -34,9 +34,9 @@ def multiply(x,y)
 end
 
 def divide(x,y)
-  if iszero(y)
+  if is_zero(y)
     raise "Can't divide by zero."
-  elsif iszero(x)
+  elsif is_zero(x)
     x 
   elsif subtract(x,y) < y
     1
@@ -51,7 +51,7 @@ def modulus(x,y)
 end  
 
 def power(x,y)
-  if iszero(y)
+  if is_zero(y)
     1
   else
     y = y.pred
