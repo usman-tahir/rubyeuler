@@ -14,8 +14,8 @@
 
 (define (subtract x y)
   (if (iszero y)
-    (eval x)
-    (subtract (pred x) (pred y))))
+      (eval x)
+      (subtract (pred x) (pred y))))
 
 (define (multiply x y)
   (cond ((iszero y) (eval y))
