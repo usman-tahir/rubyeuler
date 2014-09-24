@@ -26,3 +26,11 @@
   (cond ((iszero y) (eval "div/0"))
         ((< (subtract x y) y) (eval 1))
         (else (succ (divide (subtract x y) y)))))
+
+(define (modulus x y)
+  (subtract x (multiply y (divide x y))))
+
+(define (power x y)
+  (if (iszero y)
+      (eval 1)
+      (multiply x (power x (pred y)))))
