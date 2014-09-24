@@ -22,3 +22,7 @@
         ((iszero (pred y)) (eval x))
         (else (add (multiply (eval x) (pred y)) x))))
 
+(define (divide x y)
+  (cond ((iszero y) (eval "div/0"))
+        ((< (subtract x y) y) (eval 1))
+        (else (succ (divide (subtract x y) y)))))

@@ -42,7 +42,7 @@ def divide(x,y)
     1
   else
     x = x-y
-    (add(1,divide(x,y)))  
+    divide(x,y).succ  
   end       
 end
 
@@ -60,6 +60,6 @@ def power(x,y)
 end  
 
 puts multiply(5,20)
-puts divide(20,5)
+puts divide(20,2)
 puts modulus(10,7)
 puts power(3,4)
