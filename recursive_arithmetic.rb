@@ -62,4 +62,4 @@ end
 puts multiply(5,20)
 puts divide(20,2)
 puts modulus(10,7)
-puts power(3,4)
+puts power(5,5)
