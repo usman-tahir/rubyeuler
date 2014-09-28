@@ -8,4 +8,4 @@ def factorial(number)
   end
 end
 
-puts factorial(5)  
+puts factorial(4)  
