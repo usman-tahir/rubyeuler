@@ -13,10 +13,12 @@ end
 
 class Fixnum
   def factorial
-    factorial = 1
-    self.downto(1) {|number| factorial *= number }
-    factorial
-  end 
+    if self == 0
+      return 1
+    else
+      self * ((self.pred).factorial)
+    end
+  end
 
   def divisors
     1.upto(Math.sqrt(self)).select {|i| (self % i).zero?}.inject([]) do |f, i| 
