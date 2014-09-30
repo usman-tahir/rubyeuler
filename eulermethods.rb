@@ -81,7 +81,7 @@ class Fixnum
   end
 
   def heptagonal?
-    ((Math.sqrt((40 * self) + 9)) + 3) / 10 % 1 == 0
+    (((Math.sqrt((40 * self) + 9)) + 3) / 10) % 1 == 0
   end
   
   def octagonal?
