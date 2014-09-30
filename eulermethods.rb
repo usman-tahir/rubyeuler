@@ -80,6 +80,14 @@ class Fixnum
     ((Math.sqrt((8 * self) + 1) + 1) /  4) % 1 == 0
   end
 
+  def heptagonal?
+    ((Math.sqrt((40 * self) + 9)) + 3) / 10 % 1 == 0
+  end
+  
+  def octagonal?
+    (((Math.sqrt((3 * self) + 1)) + 1) / 3) % 1 == 0
+  end  
+
   def pandigital?
     comparison = (1..self.length).to_a
     test = self.to_a.sort
