@@ -8,8 +8,7 @@ end
 def happy_or_unhappy?(number)
   chain_array = [number]
   temp_value = number
-  until chain_array[-1] == 89 ||
-        chain_array[-1] == 1
+  until chain_array[-1] == 89 || chain_array[-1] == 1
     chain_array << sum_square_digits(temp_value)
     temp_value = sum_square_digits(temp_value)
   end
