@@ -1,12 +1,8 @@
 # http://rosettacode.org/wiki/Happy_numbers
 load "eulermethods.rb"
 
-def square_digits(number)
-  square_vals =[]
-  number.to_a.each do |digit|
-    square_vals << digit ** 2
-  end
-  square_vals.sum
+def sum_square_digits(number)
+  number.to_a.map { |digit| digit ** 2 }.inject(:+)
 end
 
 def happy_or_unhappy?(number)
@@ -14,11 +10,11 @@ def happy_or_unhappy?(number)
   temp_value = number
   until chain_array[-1] == 89 ||
         chain_array[-1] == 1
-    chain_array << square_digits(temp_value)
-    temp_value = square_digits(temp_value)
+    chain_array << sum_square_digits(temp_value)
+    temp_value = sum_square_digits(temp_value)
   end
-  return "unhappy" if chain_array[-1] == 89
-  return "happy" if chain_array[-1] == 1
+  "unhappy" if chain_array[-1] == 89
+  "happy" if chain_array[-1] == 1
 end
 
 def find_happy_numbers(number)
