@@ -147,6 +147,16 @@ class Fixnum
   def palindrome?
     self == self.reverse
   end
+
+  def happy?
+    number_chain = [self]
+    temp_val = self
+    until number_chain[-1] == 89 || number_chain[-1] == 1
+      temp_val = temp_val.to_a.map { |digit| digit ** 2 }.sum
+      number_chain << temp_val
+    end
+    number_chain[-1] == 1
+  end    
   
   def sum_digits
     self.to_a.sum
