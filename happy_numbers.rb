@@ -3,7 +3,7 @@
 load "eulermethods.rb"
 
 def sum_square_digits(number)
-  number.to_a.map { |digit| digit ** 2 }.inject(:+)
+  number.to_a.map { |digit| digit ** 2 }.sum
 end
 
 def happy?(number)
@@ -26,4 +26,4 @@ def find_happy_numbers(number)
   happy_numbers
 end  
 
-p find_happy_numbers(143)
+p find_happy_numbers(15)
