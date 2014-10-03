@@ -6,4 +6,5 @@ def sum_of_squares(*args)
 end
 
 p sum_of_squares(0)
-p sum_of_squares(1,2,3)  
+p sum_of_squares(1,2,3) 
+p sum_of_squares(3.0, 1.0, 4.0, 1.0, 5.0, 9.0) 
