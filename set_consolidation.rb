@@ -8,7 +8,11 @@ two = ["c","d"]
 three = ["b","d"]
 
 def consolidate(set1,set2)
-  (set1 + set2).uniq.sort
+  if (set1 & set2).count == 0
+    return [set1,set2]
+  else  
+    (set1 + set2).uniq.sort
+  end  
 end  
 
 # example 1
