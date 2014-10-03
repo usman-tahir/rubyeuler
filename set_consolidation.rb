@@ -27,6 +27,6 @@ c = ["c","d"]
 d = ["d","b"]
 e = ["f","g","h"]
 
-p consolidate(consolidate(one,three),two)
+p consolidate(consolidate(b,d),c)
 p consolidate(a,e)
 
