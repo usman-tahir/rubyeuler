@@ -31,6 +31,5 @@ c = ["c","d"]
 d = ["d","b"]
 e = ["f","g","h"]
 
-p consolidate(consolidate(b,d),c)
-p consolidate(a,e)
+p consolidate(consolidate(consolidate(b,d),c),consolidate(a,e))
 
