@@ -14,9 +14,9 @@ def game_loop
   puts "Write an arithmetic expression using only those digits that results in 24: "
   user_expression = gets.chomp
   if user_expression.gsub(/[^\d]/, '').split(//).map {|digit| digit.to_i}.sort != initial_digits
-    puts "use only the digits in the initial array!"
+    puts "Use only the digits in the initial array!"
   elsif eval(user_expression).class != Fixnum
-    puts "not an arithmetic expression!"
+    puts "Not an arithmetic expression!"
   elsif eval(user_expression) != 24
     puts "Sorry, your expression totals #{eval(user_expression)}."
   else eval(user_expression) == 24
