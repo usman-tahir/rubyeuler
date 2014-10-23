@@ -17,7 +17,7 @@ def find_ordered_words_in_dictionary
   words_to_test.each do |word|
     ordered_words << word if ordered_word(word)
   end
-  ordered_words
+  ordered_words.group_by { |word| word.length }.max
 end
 
 puts find_ordered_words_in_dictionary
