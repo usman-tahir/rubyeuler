@@ -2,6 +2,8 @@
 
 class LinearCongruentialGenerator
 
+  attr_accessor :seed
+
   def initialize(seed)
     @seed = seed
   end
