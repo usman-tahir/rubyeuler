@@ -7,5 +7,5 @@ def get_site(url)
 end
 
 get_site("http://tycho.usno.navy.mil/cgi-bin/timer.pl").each_line do |line|
-  puts line if line.include?("UTC") 
+  puts line.gsub(/<BR>/,'') if line.include?("UTC") 
 end    
