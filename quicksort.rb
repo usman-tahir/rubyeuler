@@ -15,8 +15,6 @@ def quicksort(array)
   end   
   quicksort(lesser) + equiv + quicksort(greater) 
 end    
-         
-
-
+        
 test_array = [4, 65, 2, -31, 0, 99, 2, 83, 782, 1]
 p quicksort(test_array)
