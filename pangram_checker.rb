@@ -11,9 +11,9 @@ class String
      end
      pangram_flag
   end
+
 end
 
 p "The quick brown fox jumps over the lazy dog.".pangram?
 p "The five boxing wizards dump quickly.".pangram?
-
      
