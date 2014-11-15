@@ -17,11 +17,4 @@ def create_xml
   doc1
 end
 
-create_xml.write($stdout, 2)
-
-
-
-# desired output:
-# <CharacterRemarks>
-#   <Character name="Name">remark</Character>
-# </CharacterRemarks>  
+create_xml.write($stout,2)
