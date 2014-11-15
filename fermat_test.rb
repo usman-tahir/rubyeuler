@@ -38,6 +38,4 @@ def fast_prime?(n,times)
   end     
 end
 
-p fast_prime?(5,10)
-p fast_prime?(20,10)
-
+p fast_prime?(15_485_863,1000)
