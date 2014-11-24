@@ -9,7 +9,7 @@ def phrase_reversals(str)
   str.split(" ").map.each do |word|
     print "#{word.reverse} " 
   end; puts
-  # reverse the words in the string without reversing the words
+  # reverse the order of words in the string without reversing the words
   str.split(" ").to_a.reverse.each do |word|
     print "#{word} "
   end; puts  
