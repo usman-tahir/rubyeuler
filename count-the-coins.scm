@@ -1,7 +1,7 @@
 ;; http://rosettacode.org/wiki/Count_the_coins
 
 (define (count-change amount)
-  (cc amount 5))
+  (cc amount 4))
 
 (define (cc amount kinds-of-coins)
   (cond ((= amount 0) 1)
@@ -16,5 +16,4 @@
   (cond ((= kinds-of-coins 1) 1)
         ((= kinds-of-coins 2) 5)
         ((= kinds-of-coins 3) 10)
-        ((= kinds-of-coins 4) 25)
-        ((= kinds-of-coins 5) 50)))
+        ((= kinds-of-coins 4) 25)))
