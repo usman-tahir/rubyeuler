@@ -34,10 +34,7 @@ def print_wc(attribute,file)
 end  
 
 ATTRIBUTES = ["-w","-l","-c"]
-case 
-when ARGV.count == 0
-  puts "usage:"
-  puts "wc [-lwc] [filename]"
+case
 when ARGV.count == 1 && ATTRIBUTES.include?(ARGV[0].to_s)
   puts "please choose a file"
 when ARGV.count == 1 && !ATTRIBUTES.include?(ARGV[0].to_s)
@@ -46,10 +43,7 @@ when ARGV.count == 1 && !ATTRIBUTES.include?(ARGV[0].to_s)
 when ARGV.count == 2 && ATTRIBUTES.include?(ARGV[0].to_s)
   puts print_wc(ARGV[0].to_s,ARGV[1].to_s) if File.file?(ARGV[1].to_s)
   puts "can't find file: #{ARGV[1].to_s}" if !File.file?(ARGV[1].to_s)
-when ARGV.count == 2 && !ATTRIBUTES.include?(ARGV[0].to_s)
-  puts "usage:"
-  puts "wc [-lwc] [filename]"
-when ARGV.count > 2
+else
   puts "usage:"
   puts "wc [-lwc] [filename]"
 end
