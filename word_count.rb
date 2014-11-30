@@ -38,7 +38,7 @@ case
 when ARGV.count == 1 && ATTRIBUTES.include?(ARGV[0].to_s)
   puts "please choose a file"
 when ARGV.count == 1 && !ATTRIBUTES.include?(ARGV[0].to_s)
-  puts print_wc("-w",ARGV[0].to_s) if File.file?(ARGV[0].to_s)
+  puts print_wc(nil,ARGV[0].to_s) if File.file?(ARGV[0].to_s)
   puts "can't find file: #{ARGV[0].to_s}" if !File.file?(ARGV[0].to_s)
 when ARGV.count == 2 && ATTRIBUTES.include?(ARGV[0].to_s)
   puts print_wc(ARGV[0].to_s,ARGV[1].to_s) if File.file?(ARGV[1].to_s)
