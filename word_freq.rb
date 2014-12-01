@@ -30,6 +30,8 @@ when ARGV.count == 1 && File.file?(ARGV[0].to_s)
   puts print_freq(ARGV[0].to_s)
 when ARGV.count == 2 && File.file?(ARGV[0].to_s) && ARGV[1].to_i != 0
   puts print_freq(ARGV[0].to_s,ARGV[1].to_i)
+when !File.file?(ARGV[0].to_s)
+  puts "can't find file #{file}"
 else
   puts "usage:"
   puts "word_freq.rb [filename] [number of words]"
