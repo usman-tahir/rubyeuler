@@ -45,5 +45,5 @@ when ARGV.count == 2 && ATTRIBUTES.include?(ARGV[0].to_s)
   puts "can't find file: #{ARGV[1].to_s}" if !File.file?(ARGV[1].to_s)
 else
   puts "usage:"
-  puts "wc [-lwc] [filename]"
+  puts "word_count.rb [-lwc] [filename]"
 end
