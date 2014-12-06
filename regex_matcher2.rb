@@ -23,7 +23,11 @@ def match(regex,text)
   when regex[0] == '^'
     match_here(regex[1..-1],text)
   else 
-    match_here(regex,text) #|| match(regex[1..-1],text[1..-1])
+    if match_here(regex,text) != nil
+      match_here(regex,text)
+    else
+      match(regex[1..-1],text[1..-1])
+    end  
   end  
 end
 
@@ -32,6 +36,8 @@ def match_here(regex,text)
   case
   when regex == nil
     return true
+  when regex.count == 1 && regex[-1] == text[regex.index(regex[-1])]
+    return true  
   when regex.count > 1 && regex[1] == '*'
     match_star(regex[0],regex[1..-1],text)
   when regex[0] == '$' && regex[1] == nil
@@ -58,7 +64,7 @@ def match_star(c,regex,text)
 end  
 
 p trex('foo','bar')    
-p trex('foo','foo')  
+p trex('foo','foo')
 
 class TestMatch < MiniTest::Unit::TestCase
 
