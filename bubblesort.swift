@@ -12,7 +12,6 @@ func bubbleSort(toSort: [Int]) -> [Int] {
       }
     }
   }
-
   return sortableArray
 }
 
