@@ -1,10 +1,10 @@
 func recurSum(arrayToSum: [Int], arraySize: Int) -> Int {
-  let mutableArray = arrayToSum
+  let functionArray = arrayToSum
   if (arraySize == 0) {
     return 0
   } else {
-    let lastNumber = mutableArray[arraySize-1]
-    let allButLastSum = recurSum(mutableArray,arraySize-1)
+    let lastNumber = functionArray[arraySize-1]
+    let allButLastSum = recurSum(functionArray,arraySize-1)
     return lastNumber + allButLastSum
   }
 }
