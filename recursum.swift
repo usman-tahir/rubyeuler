@@ -1,5 +1,5 @@
 func recurSum(arrayToSum: [Int], arraySize: Int) -> Int {
-  var mutableArray = arrayToSum
+  let mutableArray = arrayToSum
   if (arraySize == 0) {
     return 0
   } else {
