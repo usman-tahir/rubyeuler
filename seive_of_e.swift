@@ -2,10 +2,10 @@
 
 func find_primes_upto(number:Int) -> [Int] {
   var primes = [Int](2...number)
-  for var index = 0; index < primes.count; index++ {
-    for var jindex = index+1; jindex < primes.count; jindex++ {
-      if primes[jindex] % primes[index] == 0 {
-        primes.removeAtIndex(jindex)
+  for var i = 0; i < primes.count; i++ {
+    for var j = i+1; j < primes.count; j++ {
+      if primes[j] % primes[i] == 0 {
+        primes.removeAtIndex(j)
       }
     }
   }
