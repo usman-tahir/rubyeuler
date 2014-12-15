@@ -1,6 +1,6 @@
 // http://rosettacode.org/wiki/Sieve_of_Eratosthenes
 
-func find_primes_upto(number:Int) -> [Int] {
+func findPrimesTo(number:Int) -> [Int] {
   var primes = [Int](2...number)
   for var i = 0; i < primes.count; i++ {
     for var j = i+1; j < primes.count; j++ {
@@ -12,4 +12,4 @@ func find_primes_upto(number:Int) -> [Int] {
   return primes
 }
 
-println(find_primes_upto(1000))
+println(findPrimesTo(1000))
