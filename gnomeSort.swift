@@ -9,7 +9,7 @@ func gnomeSort(testArray:[Int]) -> [Int] {
       i = j
       j = j + 1
     } else {
-      exchange(&modifiableArray, i-1, i)
+      swap(&modifiableArray[i-1], &modifiableArray[i])
       i = i - 1
       if i == 0 {
         i = j
@@ -19,12 +19,6 @@ func gnomeSort(testArray:[Int]) -> [Int] {
   }
   return modifiableArray
 }  
-
-func exchange<T>(inout data: [T], i: Int, j: Int) {
-    let temp = data[i]
-    data[i] = data[j]  
-    data[j] = temp    
-}
 
 var testArray : [Int] = [100, 2, 56, 200, -52, 3, 99, 33, 177, -199]
 println(gnomeSort(testArray))
