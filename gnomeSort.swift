@@ -7,7 +7,7 @@ func gnomeSort(testArray:[Int]) -> [Int] {
   while i < modifiableArray.count {
     if modifiableArray[i-1] <= modifiableArray[i] {
       i = j
-      j = j+1
+      j = j + 1
     } else {
       exchange(&modifiableArray, i-1, i)
       i = i - 1
