@@ -1,6 +1,6 @@
 # http://rosettacode.org/wiki/Pascal%27s_triangle
-start_time = Time.now
-row_number_to_find = 5
+
+row_number_to_find = 48
 
 def pascals_triangle(number_of_rows)
   triangle_for_row = [1]
@@ -18,6 +18,4 @@ def pascals_triangle(number_of_rows)
   triangle_for_row	
 end
 
-row = pascals_triangle(row_number_to_find).inspect
-puts "Row number #{row_number_to_find} of Pascal's Triangle is: " + row.to_s
-puts ((Time.now - start_time).to_f).to_s + "s"
+p pascals_triangle(row_number_to_find)
