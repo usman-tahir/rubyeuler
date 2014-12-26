@@ -22,20 +22,20 @@ func classify(n:Int) -> Int {
   }
 }
 
-var deficients:[Int] = []
-var abundants:[Int] = []
-var perfects:[Int] = []
+var deficients = 0
+var abundants = 0
+var perfects = 0
 for var i = 1; i <= 20000; i++ {
   let kind = classify(i)
   if kind == -1 {
-    deficients.append(i)
+    deficients++
   } else if kind == 1 {
-    abundants.append(i)
+    abundants++
   } else if kind == 0 {
-    perfects.append(i)
+    perfects++
   }
 }
 
-println(deficients.count)
-println(perfects.count)
-println(abundants.count)
+println(deficients)
+println(perfects)
+println(abundants)
