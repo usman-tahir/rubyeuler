@@ -3,12 +3,13 @@
 func evenFiboTerms() -> Int {
   var nthCounter = 1
   var accumulator = 0
-  while fibo(nthCounter) < 4_000_000 {
-    let val = fibo(nthCounter)
+  var val = fibo(nthCounter)
+  while val < 4_000_000 {
     if val % 2 == 0 {
       accumulator += val 
     }
     nthCounter++
+    val = fibo(nthCounter)
   }
   return accumulator
 }
