@@ -8,8 +8,7 @@ def pow(x,y)
   end
 end
 
-def split(n,array=nil)
-  array =[] if array == nil
+def split(n,array=[])
   if n < 10
     array.push n
   else 
