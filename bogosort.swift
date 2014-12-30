@@ -30,9 +30,6 @@ func bogosort(array:[Int]) -> [Int] {
     mutableArray = shuffle(mutableArray)
     println(counter)
     counter++
-    if sorted(mutableArray) {
-      return mutableArray
-    }
   }
   return mutableArray
 }
