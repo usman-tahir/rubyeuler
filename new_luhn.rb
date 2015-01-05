@@ -5,9 +5,10 @@ def checksum(n)
   check_array.each_index do |index|
     if index % 2 == 1
       check_array[index] *= 2
-      check_array[index] = split(check_array[index]).inject(:+)
+      check_array[index] = sum(split(check_array[index]))
     end
-  end.inject(:+) % 10 == 0
+  end
+  sum(check_array) % 10 == 0
 end
 
 def split(n,array=[])
@@ -18,6 +19,15 @@ def split(n,array=[])
     split(n/10,array)
   end  
 end
+
+def sum(array,index=0)
+  if index == array.length
+    0
+  else
+    array[index] + sum(array,index+1)
+  end
+end
+
 
 numbers_to_check.each do |num|
   puts "#{num}: #{checksum(num)}"
