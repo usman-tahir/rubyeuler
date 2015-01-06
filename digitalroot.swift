@@ -36,7 +36,16 @@ func integerLength(number:Int) -> Int {
 }
 
 let testNumbers = [627615, 39390, 588225, 393900588225,3]
-for number in testNumbers {
-  let result = findRoot(number,0)
-  println("\(number) has digital root of \(result[0]) and additive persistence of \(result[1])")
+
+func showResult(array:[Int],index:Int) -> Int {
+  if index >= array.count {
+    return 0
+  } else {
+    let number = array[index]
+    let result = findRoot(number,0)
+    println("\(number) has digital root of \(result[0]) and additive persistence of \(result[1])")
+    return showResult(array,index+1)
+  }
 }
+
+showResult(testNumbers,0)
