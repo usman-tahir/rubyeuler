@@ -1,9 +1,7 @@
 # http://rosettacode.org/wiki/Digital_root
 
-test_numbers_array = [627615, 39390, 588225, 393900588225,3]
-
 def find_root(number,persistence=0)
-  if integerLength(number) == 1
+  if integer_length(number) == 1
     [number, persistence]
   else
     find_root(sum(split(number)),persistence+1)
@@ -26,11 +24,21 @@ def sum(array,index=0)
   end
 end
 
-def integerLength(number)
+def integer_length(number)
   split(number).count
 end
 
-test_numbers_array.each do |number|
-  result = find_root(number)
-  puts "#{number} has digital root of #{result[0]} and additive persistence of #{result[1]}"
+def show_result(array,index=0)
+  if index >= array.count
+    return 0
+  else
+    number = array[index]
+    result = find_root(number)
+    puts "#{number} has digital root of #{result[0]} and additive persistence of #{result[1]}"
+    show_result(array,index+1)
+  end
 end
+
+test_numbers_array = [627615, 39390, 588225, 393900588225,3]
+
+show_result(test_numbers_array)
