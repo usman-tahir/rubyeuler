@@ -17,6 +17,4 @@ def taxicab_number?(n)
   false
 end
 
-(1..70_000).each do |n|
-  p n if taxicab_number?(n)
-end
+(1..70_000).each { |n| p n if taxicab_number?(n) }
