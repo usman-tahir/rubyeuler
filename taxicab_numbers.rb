@@ -7,13 +7,9 @@ def taxicab_number?(n)
   bases = []
   (1..cube_root).each do |x|
     (1..cube_root).each do |y|
-      if (x**3) + (y**3) == n && x != y
-        bases << x if !bases.include?(x)
-        bases << y if !bases.include?(y)
-        if !bases.include?(x) && !bases.include?(y)
-          counter += 1
-          bases << x; bases << y
-        end
+      next if x == y
+      if (x**3) + (y**3) == n && !bases.include?(x||y)
+        bases << x; bases << y
       end
       return true if bases.count >= 4
     end
