@@ -1,22 +1,21 @@
 # http://rosettacode.org/wiki/Ethiopian_multiplication
 
-def halve(n)
+def hlv(n)
   n / 2
 end
 
-def double(n)
+def dbl(n)
   n * 2
 end
 
-def even(n)
+def evn(n)
   n % 2 == 0
 end
 
-def ethiopian_multiplication(m,n,accumulator=0)
-  accumulator += n if !even(m)
-  m == 1 ? accumulator : ethiopian_multiplication(halve(m),double(n),accumulator)
+def e_mult(m,n,acc=0)
+  m == 1 ? acc + n : evn(m) ? e_mult(hlv(m),dbl(n),acc) : e_mult(hlv(m),dbl(n),acc+n)
 end
 
-p ethiopian_multiplication(17,34)
-p ethiopian_multiplication(4,4)
-p ethiopian_multiplication(20,5)
+p e_mult(17,34)
+p e_mult(4,4)
+p e_mult(20,5)
