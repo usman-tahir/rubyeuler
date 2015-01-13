@@ -14,19 +14,16 @@ func even(n:Int) -> Bool {
 
 func ethiopianMultiplication(m:Int,n:Int,counter:Int,count:Int) -> Int {
   var newCounter = counter
-  if count == 0 {
+  if count == 0 && !even(m) {
     newCounter = counter + n
   }
-  var newCount = count + 1
   if m == 1 {
     return newCounter + n
   } else {
-    let x = halve(m)
-    let y = double(n)
-    if !even(y) {
-      newCounter = newCounter + y
+    if !even(double(n)) {
+      newCounter = newCounter + double(n)
     }
-    return ethiopianMultiplication(x,y,newCounter,newCount)
+    return ethiopianMultiplication(halve(m),double(n),newCounter,count+1)
   }
 }
 
@@ -35,4 +32,4 @@ func eMult(x:Int,y:Int) -> Int {
 }
 
 println(eMult(17,34))
-println(eMult(3,4))
+println(eMult(4,4))
