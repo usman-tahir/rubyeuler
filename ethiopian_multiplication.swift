@@ -12,24 +12,18 @@ func even(n:Int) -> Bool {
   return n % 2 == 0
 }
 
-func ethiopianMultiplication(m:Int,n:Int,counter:Int,count:Int) -> Int {
-  var newCounter = counter
-  if count == 0 && !even(m) {
-    newCounter = counter + n
+func ethiopianMultiplication(m:Int,n:Int,accumulator:Int) -> Int {
+  var newAccumulator = accumulator
+  if !even(m) {
+    newAccumulator = newAccumulator + n
   }
   if m == 1 {
-    return newCounter + n
+    return newAccumulator
   } else {
-    if !even(double(n)) {
-      newCounter = newCounter + double(n)
-    }
-    return ethiopianMultiplication(halve(m),double(n),newCounter,count+1)
+    return ethiopianMultiplication(halve(m),double(n),newAccumulator)
   }
 }
 
-func eMult(x:Int,y:Int) -> Int {
-  return ethiopianMultiplication(x,y,0,0)
-}
-
-println(eMult(17,34))
-println(eMult(4,4))
+println(ethiopianMultiplication(17,34,0))
+println(ethiopianMultiplication(4,4,0))
+println(ethiopianMultiplication(20,5,0))
