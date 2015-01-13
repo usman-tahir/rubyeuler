@@ -23,7 +23,7 @@ func ethiopianMultiplication(m:Int,n:Int,counter:Int,count:Int) -> Int {
   } else {
     let x = halve(m)
     let y = double(n)
-    if y % 2 != 0 {
+    if !even(y) {
       newCounter = newCounter + y
     }
     return ethiopianMultiplication(x,y,newCounter,newCount)
