@@ -1,20 +1,15 @@
 # http://rosettacode.org/wiki/Vampire_number
 
 # factorization borrowed from http://rosettacode.org/wiki/Factors_of_an_integer#Ruby
-class Integer
-  def factors
-    1.upto(Math.sqrt(self)).select {|i| (self % i).zero?}.inject([]) do |f, i| 
-      f << self/i unless i == self/i
-      f << i
-    end.sort
-  end
+def factors(n)
+  (1..Math.sqrt(n)).select {|f| n % f == 0 }.inject([]) {|f, i| f << n/i unless i == n/i; f << i}.sort
 end
 
 def vampire?(number)
   digits = number.to_s.split(//).sort
   return false if digits.count.odd?
   fangs = []
-  number.factors.select {|fctr| fctr.to_s.length == digits.count/2 }.each do |factor| 
+  factors(number).select {|fctr| fctr.to_s.length == digits.count/2 }.each do |factor| 
     f_one, f_two = factor, number/factor
     next if f_one % 10 == 0 && f_two % 10 == 0
     f_one_ary, f_two_ary = f_one.to_s.split(//), f_two.to_s.split(//)
