@@ -2,7 +2,7 @@
 
 # factorization borrowed from http://rosettacode.org/wiki/Factors_of_an_integer#Ruby
 def factors(n)
-  (1..Math.sqrt(n)).select {|f| n % f == 0 }.inject([]) {|f, i| f << n/i unless i == n/i; f << i}.sort
+  (1..Math.sqrt(n)).select {|f| n % f == 0}.inject([]) {|f,i| f << n/i; f << i}.sort.uniq
 end
 
 def vampire?(number)
