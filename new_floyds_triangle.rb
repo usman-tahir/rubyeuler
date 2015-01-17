@@ -1,15 +1,14 @@
 # http://rosettacode.org/wiki/Floyd%27s_triangle
 
 def floyds(rows)
-  row = 1
   n = 1
-  until row > rows
+  (1..rows).each do |row|
     (1..row).each do
-      print n.to_s.length == 1 ? " #{n} " : "#{n} "
+      print n >= 100 ? "#{n} " : n >= 10 ? " #{n} " : "  #{n} "
       n += 1
-    end
-    row += 1; puts
-  end
+    end; puts
+  end; puts
 end
 
 floyds(5)
+floyds(14)
