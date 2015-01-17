@@ -16,7 +16,7 @@ def vampire?(number)
     fangs << [f_one,f_two] if [f_one_ary + f_two_ary].flatten.sort == digits
   end
   return false if fangs.empty?
-  fangs.each { |fang| fang.sort! }.uniq
+  fangs.each {|fang| fang.sort!}.uniq
 end
 
 found = 0
@@ -30,7 +30,7 @@ until found == 25
   if counter + 1 == 10_000
     counter = 100_000
   elsif counter + 1 == 1_000_000
-    counter = 10_000_00
+    counter = 10_000_000
   else
     counter += 1
   end
