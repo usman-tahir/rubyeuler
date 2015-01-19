@@ -18,4 +18,4 @@ def length(n)
   split(n).count
 end
 
-test_numbers.each { |n| puts "#{n} has digital root of #{find_digital_root(n)[0]} and additive persistence of #{find_digital_root(n)[1]}" }
+test_numbers.each { |n| val = find_digital_root(n); puts "#{n} has digital root of #{val[0]} and additive persistence of #{val[1]}" }
