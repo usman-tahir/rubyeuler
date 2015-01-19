@@ -10,4 +10,4 @@ def hundred_doors
   doors
 end
 
-hundred_doors.each_index { |index| p "#{index+1}" if hundred_doors[index] == 1 }
+hundred_doors.each_index { |index| p "door #{index+1}" if hundred_doors[index] == 1 }
