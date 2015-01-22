@@ -7,8 +7,9 @@ def count_substring(string,substring)
     if string.slice(index,substring.length) == substring
       counter += 1
       index += substring.length    
+    else
+      index += 1
     end
-    index += 1
   end
   counter
 end
