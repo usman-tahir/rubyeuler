@@ -1,5 +1,4 @@
 // http://rosettacode.org/wiki/Primality_by_trial_division
-import Darwin
 
 func isPrime(n:Int) -> Bool {
   for var i = 3; i < n; i = i + 2 {
