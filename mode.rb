@@ -1,5 +1,5 @@
 # http://rosettacode.org/wiki/Averages/Mode
-start_time = Time.now
+
 test_array1 = [1, 2, 3, 1, 2, 4, 2, 5, 2, 3, 3, 1, 3, 6]
 test_array2 = [1,1,1,1,1,2,2,3,3,3,3]
 
@@ -23,6 +23,5 @@ def find_mode(array)
   max_key
 end
 
-puts find_mode(test_array1).inspect
-puts find_mode(test_array2).inspect
-puts ((Time.now-start_time).to_f).to_s + "s"			
+p find_mode(test_array1)
+p find_mode(test_array2)
