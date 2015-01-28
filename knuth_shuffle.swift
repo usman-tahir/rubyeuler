@@ -3,7 +3,7 @@ import Darwin
 
 func knuthShuffle(array:[Int]) -> [Int] {
   var mutableArray:[Int] = array
-  for var i = 1; i < array.count; i++ {
+  for var i = 0; i < array.count; i++ {
     let j = Int(arc4random_uniform(UInt32(array.count)))
     let k = mutableArray[i]
     mutableArray[i] = mutableArray[j]
