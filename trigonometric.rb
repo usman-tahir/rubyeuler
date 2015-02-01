@@ -26,6 +26,7 @@ def arctangent(float)
   Math.atan(float)
 end
 
+# values from C version
 degrees = 45.0
 radians = Math::PI / 4
 
