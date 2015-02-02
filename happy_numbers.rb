@@ -2,28 +2,23 @@
 # http://en.wikipedia.org/wiki/Happy_number
 load "eulermethods.rb"
 
-def sum_square_digits(number)
-  number.to_a.map { |digit| digit ** 2 }.sum
-end
-
 def happy?(number)
-  chain_array = [number]
-  temp_value = number
-  until chain_array[-1] == 89 || chain_array[-1] == 1
-    temp_value = sum_square_digits(temp_value)
-    chain_array << temp_value
+  while (number != 1) && (number != 89)
+    number = sum_square_digits(number)
   end
-  chain_array[-1] == 1
+  number == 1
 end
 
-def find_happy_numbers(number)
-  happy_numbers =[]
-  counter = 1
-  until happy_numbers.count == number
-    happy_numbers << counter if happy?(counter)
-    counter += 1  
+def sum_square_digits(number,accumulator=0)
+  number < 10 ? accumulator + (number ** 2) : ((number % 10) ** 2) + sum_square_digits(number/10,accumulator)
+end
+
+def find_happy_numbers(number,array=[],counter=1)
+  until array.count == number
+    array << counter if happy?(counter) 
+    counter += 1
   end
-  happy_numbers
+  array
 end  
 
-p find_happy_numbers(15)
+p find_happy_numbers(8)
