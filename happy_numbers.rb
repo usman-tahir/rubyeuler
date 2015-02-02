@@ -1,6 +1,4 @@
 # http://rosettacode.org/wiki/Happy_numbers
-# http://en.wikipedia.org/wiki/Happy_number
-load "eulermethods.rb"
 
 def happy?(number)
   while (number != 1) && (number != 89)
