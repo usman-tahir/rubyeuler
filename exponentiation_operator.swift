@@ -25,7 +25,9 @@ func subtract(x:Int,y:Int) -> Int {
 }
 
 func multiply(x:Int,y:Int) -> Int {
-  if y == 1 {
+  if y == 0 {
+    return y 
+  } else if y == 1 {    
     return x
   } else {
     return add(x,(multiply(x,subtract(y,1))))

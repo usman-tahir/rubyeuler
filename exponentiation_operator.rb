@@ -5,7 +5,7 @@ def exp(x,y)
 end
 
 def multiply(x,y)
-  y == 1 ? x : add(x,(multiply(x,subtract(y,1))))
+  y == 0 ? y : y == 1 ? x : add(x,(multiply(x,subtract(y,1))))
 end 
 
 def add(x,y)
