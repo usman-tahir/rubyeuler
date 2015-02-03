@@ -1,11 +1,11 @@
-# http://rosettacode.org/wiki/Exponentiation_operator
+# http://rosettacode.org/wiki/Exponentiaton_operator
 
 def exp(x,y)
-  y == 1 ? x : x * exp(x,subtract(y,1))
+  y == 0 ? 1 : y == 1 ? x : multiply(x,exp(x,subtract(y,1)))
 end
 
 def multiply(x,y)
-  y == 1 ? x : x + (multiply(x,subtract(y,1)))
+  y == 1 ? x : add(x,(multiply(x,subtract(y,1))))
 end 
 
 def add(x,y)
