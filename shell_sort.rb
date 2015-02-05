@@ -2,15 +2,12 @@
 
 def shell_sort(arr)
   array = arr.dup
-  len = array.count
-  gap = len/2
-  while gap > 0
-    (gap...len).each do |i|
-      temp = array[i]
-      j = i
-      while (j >= gap) && array[j-gap] > temp
-        array[j] = array[j-gap]
-        j -= gap
+  gap = array.count/2
+  gap.downto(0).each do |g|
+    (g...array.count).each do |i|
+      temp = array[i]; j = i
+      while (j >= g) && array[j-g] > temp
+        array[j] = array[j-g]; j -= g
       end
       array[j] = temp
     end
