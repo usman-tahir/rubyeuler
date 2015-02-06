@@ -7,4 +7,4 @@ data = response.body
 train_hash = JSON.parse(data)
 train = train_hash.values[0][0]["Northbound"][0]
 
-p "Train #{train["train_id"]} to #{train["destination"]} arriving at #{train["sched_time"]} is #{train["status"]} minutes late."
+p "Train #{train["train_id"]} to #{train["destination"]} scheduled to arrive at #{train["sched_time"]} is #{train["status"]} minutes late."
