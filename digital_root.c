@@ -7,7 +7,7 @@ int sumDigits(int n, int counter)
     if (n < 10) {
         return n + counter;
     } else {
-        counter = counter + (n % 10);
+        counter += (n % 10);
         n /= 10;
         return sumDigits(n, counter);
     }
