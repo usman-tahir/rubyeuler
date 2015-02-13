@@ -41,8 +41,6 @@ int eulerOneThree(int n)
     return accumulator;
 }
 
-
-
 int main(int argc, const char * argv[]) {
     int resultOne = eulerOneOne(1000);
     int resultTwo = eulerOneTwo(1000,0,0);
@@ -50,3 +48,4 @@ int main(int argc, const char * argv[]) {
     printf("%d, %d, %d\n", resultOne, resultTwo, resultThree);
     return 0;
 }
+
