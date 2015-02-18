@@ -1,9 +1,10 @@
 # http://programmingpraxis.com/2015/02/17/invoice/
+require 'date'
 
-def pretty_print_reciept
+def pretty_print_receipt
   items = get_items 
   puts "          Praxis Grocery Store          "
-  puts "              17 Feb 2015               "
+  puts Date.today.strftime("              %m/%d/%Y               ")
   puts
   counter = 1
   subtotal = 0.0
@@ -16,11 +17,11 @@ def pretty_print_reciept
     subtotal += pxn
     counter += 1
  end
-  puts "   %-31s %2.2f" % ["Subtotal:", subtotal]
+  puts "   %-31s  %.2f" % ["Subtotal:", subtotal]
   tax = subtotal * 0.0525
   total = subtotal + tax
   puts "   %-31s  %.2f" % ["Tax 5.25%:", tax]
-  puts "   %-31s %2.2f" % ["Total:", total]
+  puts "   %-31s  %.2f" % ["Total:", total]
 end
 
 def get_items
@@ -48,4 +49,4 @@ def get_items
   items
 end
 
-pretty_print_reciept
+pretty_print_receipt
