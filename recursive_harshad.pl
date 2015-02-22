@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
+use POSIX;
 
 sub harshad {
   my $number = shift;
@@ -13,7 +14,7 @@ sub sum_digits {
   if ($number < 10) {
     return $counter + $number;
   } else {
-    return sum_digits($number/10,$counter+($number%10));
+    return sum_digits(floor($number/10),$counter+($number%10));
   }
 }
 
