@@ -15,7 +15,8 @@ sub n_bottles {
     print "$bottle bottles of beer on the wall\n";
     print "$bottle bottles of beer\n";
     print "take one down, pass it around\n";
-    $new_bottles > 1 ? my $bottle_var = "bottles" : my $bottle_var = "bottle"; 
+    my $bottle_var = "bottles";
+    $new_bottles > 1 ? $bottle_var = "bottles" : $bottle_var = "bottle"; 
     print "$new_bottles $bottle_var of beer on the wall\n";
     print "......\n";
     return n_bottles($bottle-1);
