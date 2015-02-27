@@ -1,4 +1,4 @@
-# http://programmingpraxis.com/2015/02/27/currency-exchange/2/
+# http://programmingpraxis.com/2015/02/27/currency-exchange/
 require 'net/http'
 require 'json'
 
