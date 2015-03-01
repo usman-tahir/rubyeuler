@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 sub checksum {
-  my @list = split(//,reverse $_);
+  my @list = split(//,reverse shift);
   my $acc = 0;
   for (my $i = 0; $i < scalar @list; $i += 2) {
     $acc += $list[$i];
@@ -17,7 +17,7 @@ sub checksum {
 }
 
 sub two_digit {
-  my @list = split(//,$_);
+  my @list = split(//,shift);
   return $list[0] + $list[-1];
 }
 
