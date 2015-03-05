@@ -5,8 +5,7 @@ use warnings;
 sub self_describing {
   my @list = split(//,shift);
   for (my $i = 0; $i < scalar @list; $i++) {
-    my $count = scalar(grep(/$i/,@list));
-    return 0 unless $count == $list[$i];
+    return 0 unless scalar(grep(/$i/,@list)) == $list[$i];
   }
   return 1
 }
