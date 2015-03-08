@@ -12,6 +12,6 @@ sub t_f_s {
 
 my $c = 0;
 for (my $i = 1; $i < 1_000_000; $i += 2) {
-  $c++ if t_f_s($i);
+  $c += t_f_s($i);
 }
 print "$c\n";
