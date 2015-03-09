@@ -63,7 +63,7 @@ def b_five(array,elem,low,high)
 end
 # this is dumb, but I like it that shows the call stack if it recurses
 
-bs =->a,e,l,h{m = h < l ? nil : (l + h) / 2; return m if m == nil; a[m] == e ? m : a[m] > e ? bs[a,e,l,m-1] : bs[a,e,m+1,h]}
+bs =->a,e,l,h{m = h < l ? nil : (l + h) / 2; (m == nil || a[m] == e) ? m : a[m] > e ? bs[a,e,l,m-1] : bs[a,e,m+1,h]}
 # I love this one, but I know it's illegible
 
 test = [0,1,4,5,6,7,8,9,12,26,45,67,78,90,98,123,211,234,456,769,865,2345,3215,14345,24324]
