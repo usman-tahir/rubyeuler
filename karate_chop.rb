@@ -35,8 +35,38 @@ end
 #still iterative; does repeatedly split list in half
 #slightly more verbose, but probably clearer to read
 
+def b_four(array,elem,low,high)
+  bs = -> a,e,l,h {return b_four(a,e,l,h)}
+  m = high < low ? nil : (low + high) / 2
+  return m if m == nil  
+  array[m] == elem ? m : array[m] > elem ? bs[array,elem,low,m-1] : bs[array,elem,m+1,high]
+end
+# like how succinct the proc is, but it's kinda hard to read
+# same basic logic as b_one
+
+def b_five(array,elem,low,high)
+  selector = rand(1..5)
+  print "called #{selector}: "
+  case
+  when selector == 1
+    b_one(array,elem,low,high)
+  when selector == 2
+    b_two(array,elem)
+  when selector == 3
+    b_three(array,elem)
+  when selector == 4
+    b_four(array,elem,low,high)
+  when selector == 5
+    b_five(array,elem,low,high)
+  else
+  end
+end
+# this is dumb, but I like it shows the call stack if it recurses
+
 test = [0,1,4,5,6,7,8,9,12,26,45,67,78,90,98,123,211,234,456,769,865,2345,3215,14345,24324]
 
-p b_one(test,98, 0, test.count)
+p b_one(test,98,0,test.count)
 p b_two(test,98)
 p b_three(test,98)
+p b_four(test,98,0,test.count)
+p b_five(test,98,0,test.count)
