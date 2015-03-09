@@ -61,7 +61,7 @@ def b_five(array,elem,low,high)
   else
   end
 end
-# this is dumb, but I like it shows the call stack if it recurses
+# this is dumb, but I like it that shows the call stack if it recurses
 
 test = [0,1,4,5,6,7,8,9,12,26,45,67,78,90,98,123,211,234,456,769,865,2345,3215,14345,24324]
 
