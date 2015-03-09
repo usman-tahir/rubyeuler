@@ -37,9 +37,8 @@ end
 
 def b_four(a,e,l,h)
   bs = -> a,e,l,h {return b_four(a,e,l,h)}
-  m = h < l ? nil : (l + h) / 2
-  return m if m == nil  
-  a[m] == e ? m : a[m] > e ? bs[a,e,l,m-1] : bs[a,e,m+1,h]
+  m = h < l ? nil : (l + h) / 2 
+  (m == nil || a[m] == e) ? m : a[m] > e ? bs[a,e,l,m-1] : bs[a,e,m+1,h]
 end
 # like how succinct the proc is, but it's kinda hard to read
 # same basic logic as b_one
