@@ -1,13 +1,16 @@
 # http://programmingpraxis.com/2010/11/02/emirps/
 require 'prime'
-start_time = Time.now
-emirps =[]
 
-# warning: slow!
-Prime.each(1_000_000) do |prime_number|
-  next if prime_number.to_s.reverse.to_i == prime_number
-  emirps << prime_number if prime_number.to_s.reverse.to_i.prime?
+counter = 0
+Prime.each(1000) do |prime_number|
+  temp = prime_number
+  reversed = 0
+  while temp > 0
+    reversed = 10 * reversed + temp % 10
+    temp /= 10
+  end
+  next if reversed == prime_number
+  counter += 1 if reversed.prime?
 end
-puts emirps.count.to_s + " emirps below one million."
 
-puts ((Time.now - start_time).to_f).to_s + "s"
+p counter
