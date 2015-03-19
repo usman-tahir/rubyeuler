@@ -4,12 +4,10 @@ DIGITS = { 0 => 0, 1 => 1, 6 => 9, 8 => 8, 9 => 6 }
 
 def upside_up(n)
   (0...n.to_s.length).each { |i| return false unless DIGITS[n.to_s[i].to_i] == n.to_s[-(i+1)].to_i }
-  true
 end
 
 def find_next(counter = 1962)
-  counter += 1 until upside_up(counter)
-  return counter if upside_up(counter)
+  upside_up(counter) ? counter : find_next(counter+1)
 end
 
 def count_below_ten_thousand
