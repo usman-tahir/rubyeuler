@@ -8,18 +8,16 @@ def random_arithmetic_equation
 end
 
 def main
-  quit_flag = false
-  until quit_flag == true
-    problem = random_arithmetic_equation
+  problem = random_arithmetic_equation
+  print problem[0]
+  answer = gets.chomp
+  until answer.to_i == problem[1] || answer == "?"
+    puts "Wrong, try again!"
     print problem[0]
     answer = gets.chomp
-    until answer.to_i == problem[1] || answer.to_s == "?"
-      puts "Wrong, try again!"
-      print problem[0]
-      answer = gets.chomp
-    end
-    puts answer.to_i == problem[1] ? "Right!" : problem[1]
   end
+  puts answer.to_i == problem[1] ? "Right!" : problem[1]
+  main
 end
 
 main
