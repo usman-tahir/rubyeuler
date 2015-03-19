@@ -8,11 +8,7 @@ def play(winnings=0)
   puts "YOUR STANDINGS ARE $#{winnings}"
   print "AGAIN? (TYPE 'Y' TO PLAY AGAIN) "
   again = gets.chomp
-  if again == "Y"
-    play(winnings)
-  else
-    puts "COLLECT YOUR WINNINGS FROM THE CASHIER"
-  end
+  again == "Y" ? play(winnings) : "COLLECT YOUR WINNINGS FROM THE CASHIER"
 end
 
 def pull_arm(bet)
@@ -24,12 +20,10 @@ def pull_arm(bet)
     puts; puts "YOU LOST."
     return bet * -1
   when result.length - 2 == result.uniq.length
-    puts; puts "TRIPLE!!"
-    puts "YOU WON!"
+    puts; puts "TRIPLE!!"; puts "YOU WON!"
     return bet * 3
   when result.length - 1 == result.uniq.length
-    puts; puts "DOUBLE!!"
-    puts "YOU WON!"
+    puts; puts "DOUBLE!!"; puts "YOU WON!"
     return bet * 2
   else
   end
@@ -38,4 +32,4 @@ end
 puts "YOU ARE IN THE CASINO, IN FRONT OF OUR"
 puts "ONE-ARMED BANDITS. BET FROM $1 to $100."
 puts "TO PULL THE ARM, PUNCH THE RETURN KEY AFTER MAKING YOUR BET"
-play
+puts play
