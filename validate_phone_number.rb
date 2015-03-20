@@ -3,7 +3,7 @@ require 'minitest/autorun'
 
 def validate_phone_number(n)
   n.gsub!(/[-.() ]/, "")
-  if n == nil || n.length != 7 && n.length != 10
+  if n == nil || n.gsub(/[0-9]/,"").length != 0 || n.length != 7 && n.length != 10
     return "#{n} is not valid"
   end
   return "#{n} is valid"
