@@ -1,26 +1,15 @@
 # http://rosettacode.org/wiki/Vector_products
-start_time = Time.now
+
+def dot_product(one, two)
+  Array.new(one.count,nil).each_with_index.map { |x,i| x = one[i] * two[i] }.inject(:+)         
+end
+
+def cross_product(one, two)
+  [(one[1] * two[2]) - (one[2] * two[1]), (one[2] * two[0]) - (one[0] * two[2]), (one[0] * two[1]) - (one[1] * two[0])]
+end
+
 a = [3, 4, 5]; b = [4, 3, 5]; c = [-5, -12, -13]
-
-def dot_product(array1, array2)
-  dot_product_result =[]
-  array1.each_index do |index|
-    dot_product_result << array1[index] * array2[index]
-  end
-  dot_product_result.inject(:+) if dot_product_result.count > 0         
-end
-
-def cross_product(array1,array2)
-  cross_product_result =[]
-  cross_product_result[0] = (array1[1] * array2[2]) - (array1[2] * array2[1])
-  cross_product_result[1] = (array1[2] * array2[0]) - (array1[0] * array2[2])
-  cross_product_result[2] = (array1[0] * array2[1]) - (array1[1] * array2[0])
-  cross_product_result
-end
-
-puts "The dot product of a & b is " + dot_product(a,b).to_s
-puts "The cross product of a & b is " + cross_product(a,b).inspect
-puts "The scalar triple product of a, b & c is " + dot_product(a, cross_product(b,c)).to_s
-puts "The vector triple product of a, b & c is " + cross_product(a, cross_product(b,c)).inspect
-
-puts ((Time.now-start_time).to_f).to_s + "s"
+puts "The dot product of a & b is #{dot_product(a,b)}"
+puts "The cross product of a & b is #{cross_product(a,b)}"
+puts "The scalar triple product of a, b & c is #{dot_product(a, cross_product(b,c))}"
+puts "The vector triple product of a, b & c is #{cross_product(a, cross_product(b,c))}"
