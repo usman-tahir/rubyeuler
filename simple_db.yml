@@ -1,0 +1,21 @@
+---
+0:
+  :date: 03/26/15
+  :title: title
+  :language: language
+1:
+  :date: 03/26/15
+  :title: The Pickaxe
+  :language: Ruby
+2:
+  :date: 03/26/15
+  :title: Land of Lisp
+  :language: Lisp
+3:
+  :date: 03/26/15
+  :title: JavaScript for Idiots
+  :language: JavaScript
+4:
+  :date: 03/26/15
+  :title: iOS Programming
+  :language: Objective-C
