@@ -80,9 +80,9 @@ def clock(hours,minutes,seconds)
   bot_ones_s = BOTS[s_ones]
 
   (<<-CLOCK)
-  #{top_tens_h}#{top_ones_h}    #{top_tens_m}#{top_ones_m}   #{top_tens_s}#{top_ones_s}
-  #{mid_tens_h}#{mid_ones_h}  . #{mid_tens_m}#{mid_ones_m} . #{mid_tens_s}#{mid_ones_s}
-  #{bot_tens_h}#{bot_ones_h} .  #{bot_tens_m}#{bot_ones_m} . #{bot_tens_s}#{bot_ones_s}
+  #{top_tens_h}#{top_ones_h}    #{top_tens_m}#{top_ones_m}    #{top_tens_s}#{top_ones_s}
+  #{mid_tens_h}#{mid_ones_h}  . #{mid_tens_m}#{mid_ones_m}  . #{mid_tens_s}#{mid_ones_s}
+  #{bot_tens_h}#{bot_ones_h} .  #{bot_tens_m}#{bot_ones_m} .  #{bot_tens_s}#{bot_ones_s}
   CLOCK
 end
 
