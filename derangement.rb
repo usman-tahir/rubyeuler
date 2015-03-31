@@ -5,7 +5,7 @@ def derangement(list)
 end
 
 def subfactorial(n)
-  n = derangement((1..n).to_a).count
+  derangement((1..n).to_a).count
 end
 
 p derangement([0,1,2,3])
