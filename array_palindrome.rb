@@ -1,4 +1,4 @@
-# http://programmingpraxis.com/
+# http://programmingpraxis.com/2015/03/31/identifying-palindromes/
 # given an array, determine if it is a palindrome
 
 def palindrome?(array)
