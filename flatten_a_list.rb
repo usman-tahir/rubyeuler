@@ -2,7 +2,7 @@
 
 def flatten_list(first_array,index=0,new_array=[])
   if index > first_array.count
-    new_array.pop
+    new_array.pop # pops nil value terminating list
     includes_array = false
     new_array.each {|n| includes_array = true if n.class == Array}   
     includes_array == false ? (return new_array) : (return flatten_list(new_array))
