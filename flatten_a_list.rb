@@ -1,21 +1,12 @@
 # http://rosettacode.org/wiki/Flatten_a_list
 
 def flatten_list(first_array,index=0,new_array=[])
-  if index > first_array.count
-    new_array.pop # pops nil value terminating list
-    includes_array = false
-    new_array.each {|n| includes_array = true if n.class == Array}   
-    includes_array == false ? (return new_array) : (return flatten_list(new_array))
+  if index == first_array.count
+    new_array.each { |n| return flatten_list(new_array) if n.class == Array }   
+    return new_array
   else 
     if first_array[index].class == Array
-      first_array[index].each do |n|
-        if n.class == Array
-          val = flatten_list(n)
-          new_array << val unless val == nil
-        else
-          new_array << n
-        end
-      end
+      first_array[index].each { |n| n.class == Array ? new_array << flatten_list(n) : new_array << n }
     else
       new_array << first_array[index]
     end
