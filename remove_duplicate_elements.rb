@@ -4,8 +4,7 @@ def remove_duplicates(list)
   new_list = list.dup
   new_list.each_index do |i|
     (i+1...new_list.count).each {|j| new_list[j] = nil if new_list[j] == new_list[i] }
-  end
-  new_list.compact
+  end.compact
 end
 
 def remove_duplicates_two(list)
@@ -15,8 +14,7 @@ def remove_duplicates_two(list)
       break if new_list[i] != new_list[j]
       new_list[j] = nil if new_list[i] == new_list[j]
     end
-  end
-  new_list.compact
+  end.compact
 end
 
 def remove_duplicates_three(list)
