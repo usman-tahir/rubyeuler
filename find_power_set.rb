@@ -1,12 +1,8 @@
 # http://rosettacode.org/wiki/Power_set
 
 def find_powerset(array)
-  counter = 1
   pwrset = []
-  until counter > array.count
-    pwrset << array.combination(counter).to_a
-    counter += 1
-  end
+  (1...array.count).each {|n| pwrset << array.combination(n).to_a }
   result = [] << []
   pwrset.each { |sub| sub.each { |subsub| result << subsub } }
   result
