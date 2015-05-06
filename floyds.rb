@@ -1,16 +1,6 @@
+#!/usr/bin/env ruby
 # http://rosettacode.org/wiki/Floyd%27s_triangle
-start_time = Time.now
 
-row = 1
-number = 1
-until row > 14 # or 5, per the task
-  (1..row).each do
-    print " " + number.to_s + " " if number.to_s.length == 1 
-    print number.to_s + " " if number.to_s.length > 1
-    number += 1
-  end
-  puts " "
-  row += 1
-end		
+floyds = -> r,n=1 { (1...r).each {|r| (1..r).each { print n < 10 ? "  #{n}" : " #{n}"; n += 1 }; print "\n" } }
 
-puts ((Time.now - start_time).to_f).to_s + "s"
+p floyds[14]
