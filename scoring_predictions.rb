@@ -2,21 +2,27 @@
 # https://practicingruby.com/articles/solving-the-scoring-predictions-kata
 
 def guess_finalists(guess,actual)
-  score = 0
-  guess.each_index do |i|
-    score += 15 if guess[i] == actual[i] && i == 0
-    score += 10 if guess[i] == actual[i] && i == 1
-    score += 5 if guess[i] == actual[i] && i == 2
-    score += 3 if guess[i] == actual[i] && i == 3
-    score += 1 if guess[i] == actual[i] && i == 4
-    score += 1 if guess[i] != actual[i] && actual.include?(guess[i])
-  end
-  score
+  guess.map.with_index(0) do |e,i|
+    if actual[i] == guess[i]
+      case
+      when i == 0
+        e = 15
+      when i == 1
+        e = 10
+      when i == 2
+        e = 5
+      when i == 3
+        e = 3
+      when i == 4
+        e = 1
+      end
+    elsif actual.include?(e)
+      e = 1
+    end
+  end.compact.inject(:+)
 end
 
 guessed = [1,2,3,4,5]
 finish = [1,3,4,0,5]
 
 p guess_finalists(guessed,finish)
-
-
