@@ -3,7 +3,7 @@ require 'prime'
 
 def prime_digit_replacements(number=8)
   # 111857 returned true until removing the possibility that the
-  # replacement digit can be the same as the digit they replace
+  # replacement digit can be the same as the digit it replaces
   a = Prime.each(111858)
   loop do
     candidate = a.next
