@@ -19,5 +19,5 @@ def find_totient_permutation(limit)
   tot_perms
 end
 
-result = find_totient_permutation(10**5)
+result = find_totient_permutation(10**7)
 p result[result.keys.min]
