@@ -27,11 +27,6 @@ class Numeric
     (((Math.sqrt((3 * self) + 1)) + 1) / 3) % 1 == 0
   end
 
-  def figurate?
-    self.triangular? || self.square? || self.pentagonal? ||
-    self.hexagonal? || self.heptagonal? || self.octagonal?
-  end
-
 end
 
 def first_two_eq_last_two(x,y)
