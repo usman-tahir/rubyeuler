@@ -43,9 +43,10 @@ def has_first_two_eq_last_two(n,ary)
   return false
 end
 
+low = 1000; high = 9999
 triangles = []; squares = []; pentagons = []
 hexagons = []; heptagons = []; octagons = []
-(1000..9999).each do |n|
+(low..high).each do |n|
   next if n.to_s.split(//).to_a.include?("0")
   triangles << n if n.triangular?
   squares << n if n.square?
@@ -64,4 +65,4 @@ triangles.map! {|e| has_first_two_eq_last_two(e,pentagons) ? e : nil}.compact!
 squares.map! {|e| has_first_two_eq_last_two(e,triangles) ? e : nil}.compact!
 heptagons.map! {|e| has_first_two_eq_last_two(e,squares) ? e : nil}.compact!
 
-p triangles[0] + squares[0] + pentagons[0] + hexagons[0] + heptagons[0] + octagons[0]
+p (triangles + squares + pentagons + hexagons + heptagons + octagons).inject(:+)
