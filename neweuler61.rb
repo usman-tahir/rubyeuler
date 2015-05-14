@@ -34,17 +34,8 @@ class Numeric
 
 end
 
-def last_two_eq_first_two(x,y)
-  x.to_s[-2..-1].to_i == y.to_s[0..1].to_i
-end
-
 def first_two_eq_last_two(x,y)
   x.to_s[0..1].to_i == y.to_s[-2..-1].to_i
-end
-
-def has_last_two_eq_first_two(n,ary)
-  ary.each { |t| return true if last_two_eq_first_two(n,t) }
-  return false
 end
 
 def has_first_two_eq_last_two(n,ary)
@@ -52,26 +43,10 @@ def has_first_two_eq_last_two(n,ary)
   return false
 end
 
-def gen_figurate(n)
-  res = {}
-  last_two = n.to_s.split(//)[-2..-1].join
-  res[n] = []
-  (11..99).each do |i|
-    next if includes_zero(i)
-    temp = (last_two.to_s + i.to_s).to_i
-    res[n] << temp if temp.figurate?
-  end
-  return res
-end
-
-def includes_zero(n)
-  n.to_s.split(//).to_a.include?("0")
-end
-
 triangles = []; squares = []; pentagons = []
 hexagons = []; heptagons = []; octagons = []
 (1000..9999).each do |n|
-  next if includes_zero(n)
+  next if n.to_s.split(//).to_a.include?("0")
   triangles << n if n.triangular?
   squares << n if n.square?
   pentagons << n if n.pentagonal?
