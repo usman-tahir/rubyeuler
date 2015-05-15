@@ -8,9 +8,10 @@ def ratio_to_decimal(numerator,denominator,digits)
   until remainder == 0 || decimal_part.count == digits
     remainder = (remainder.to_s + "0").to_i
     val = remainder.divmod(denominator)
-    decimal_part << val[0]; remainder = val[1]
+    decimal_part << val[0]
+    remainder = val[1]
   end
-  "#{int_part}.#{decimal_part.map {|e| e.to_s}.join.to_i}".to_f
+  "#{int_part}.#{decimal_part.map {|e| e.to_s}.join}"
 end
 
-p ratio_to_decimal(3227,557,30)
+puts ratio_to_decimal(3227,557,30)
