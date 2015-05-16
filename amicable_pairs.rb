@@ -1,32 +1,20 @@
+#!/usr/bin/env ruby
 # http://rosettacode.org/wiki/Amicable_pairs
 
-def divisors(number)
-  divisors = []
-  (1...number).each do |div|
-    divisors << div if number % div == 0
-  end
-  divisors
+def factors(n)
+  n_factors =[]
+  (1..Math.sqrt(n)).select { |f| n % f == 0 }.each { |v| n_factors << n/v; n_factors << v }
+  n_factors.uniq.sort - [n]
 end
 
 def sum(array,index=0)
-  if index == array.length
-    0
-  else
-    array[index] + sum(array,index+1)
-  end
+  index == array.length ? 0 : array[index] + sum(array,index+1)
 end
 
 def find_amicable_pairs(limit)
-  pairs = []
-  amicables = {}
-  (1...limit).each do |number|
-    amicables[number] = sum(divisors(number))
-  end
-  amicables.each do |key,val|
-    if amicables[val] == key && val != key
-      pairs << [key,val].sort
-    end
-  end
+  pairs = []; amicables = {}
+  (1...limit).each { |n| amicables[n] = sum(factors(n)) }
+  amicables.each { |k,v| pairs << [k,v].sort if amicables[v] == k && v != k }
   pairs.uniq
 end
 
