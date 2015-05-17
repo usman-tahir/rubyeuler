@@ -10,5 +10,4 @@ end
 
 limit = 100_000; vals = {}; vals[1] = 1
 (1..limit).each { |n| vals[n] = find_radical(n) }
-
-p Hash[vals.sort_by { |k,v| [1 * v, 1 * k]}].to_a[9999][0]
+p Hash[vals.sort_by { |k,v| [v, k]}].to_a[9999][0]
