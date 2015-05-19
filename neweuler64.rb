@@ -7,7 +7,7 @@ limit = 10_000
 def period_of_square_root(n)
   a = Math.sqrt(n)
   return 0 if a ** a == n
-  period = [a.floor]; d = 1; m = 0; a = a.to_i 
+  period = [a.to_i]; d = 1; m = 0; a = a.to_i 
   loop do
     m = d*a - m
     d = (n - m**2) / d
