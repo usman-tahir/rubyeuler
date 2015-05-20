@@ -9,21 +9,10 @@ def pascal(n)
 end
 
 def squarefree(n)
-  n.prime_division.each { |e| return false if e[1] == 2 }
+  n.prime_division.each { |e| return false if e[1] != 1 }
   return true
 end
 
-squarefrees = []
-(1..49).each do |row|
-  pascal(row).each do |n|
-     squarefrees << n if squarefree(n)
-  end
-end
-
-p squarefrees.uniq.inject(:+)
-
-sq = []
-(1..49).each do |row|
-  sq << pascal(row)
-end
-p sq.flatten.uniq.count
+pascals_numbers = []
+(1..50).each {|n| pascals_numbers << pascal(n)}
+p pascals_numbers.flatten.uniq.map {|e| squarefree(e) ? e : 0}.inject(:+)
