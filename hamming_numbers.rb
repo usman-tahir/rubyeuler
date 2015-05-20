@@ -3,26 +3,15 @@
 
 def hamming_numbers(limit)
   hammings = [1]
-  counter = 0
-  until counter >= limit
+  loop do
     t = hammings.count
     (0...t).each do |i|
-      unless hammings.include?(hammings[i] * 2)
-        hammings << hammings[i] * 2
-        counter += 1
-      end
-      unless hammings.include?(hammings[i] * 3)
-        hammings << hammings[i] * 3
-        counter += 1
-      end
-      unless hammings.include?(hammings[i] * 5)
-        hammings << hammings[i] * 5
-        counter += 1
-      end
+      hammings << hammings[i] * 2 unless hammings.include?(hammings[i] * 2)
+      hammings << hammings[i] * 3 unless hammings.include?(hammings[i] * 3)
+      hammings << hammings[i] * 5 unless hammings.include?(hammings[i] * 5)
     end
-    return hammings.sort if counter >= limit
+    return hammings.sort if hammings.count >= limit
   end
-  hammings.sort.uniq
 end
 
 p hamming_numbers(1000)
