@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 # http://rosettacode.org/wiki/Handle_a_signal
 
-
 loop do
   start_time = Time.now
   counter = 0
