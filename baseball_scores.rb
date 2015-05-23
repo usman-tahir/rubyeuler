@@ -8,9 +8,7 @@ def get_baseball_score(team)
   scores = response.body
   scores.gsub!(/%20/, ' ')
   team_index = scores.index(team)
-  until scores[team_index] == "="
-    team_index -= 1
-  end
+  team_index -= 1 until scores[team_index] == "="
   team_index += 1
   score = scores[team_index..-1]; r_i = 0
   (0...scores.length).each {|i| r_i = i-1 if score[i] == ")"; break if score[i] == ")" }
