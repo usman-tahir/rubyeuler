@@ -15,7 +15,6 @@ def concat_multiple_primes(array)
   return true
 end
 
-
 def find_prime_pair_sets(limit)
   prime_list = Prime.each(10_000).to_a
   pair_sets = {}
