@@ -1,13 +1,5 @@
+#!/usr/bin/env ruby
 # http://rosettacode.org/wiki/Set_puzzle
-# write code that deals the cards (9 or 12, depending on selected mode) from a 
-# shuffled deck in which the total number of sets that could be found is 4 (or 6, 
-#	respectively); and print the contents of the cards and the sets
-#
-# Three cards form a set if each feature is either the same on each card, or is 
-# different on each card. For instance: all 3 cards are red, all 3 cards have a 
-# different symbol, all 3 cards have a different number of symbols, all 3 cards are 
-# striped. 
-start_time = Time.now
 
 def create_deck
 	colors = ["red","green","purple"]
@@ -32,12 +24,8 @@ def deal_cards(number)
 end	
 
 def show_cards(number)
-	puts "Dealt #{number} cards"
-  deal_cards(number).each do |card|
-  	puts card[0] + " - " + card[1] + " - " + card[2] + " - " + card[3]
-  end
+	p "Dealt #{number} cards"
+  deal_cards(number).each { |c| p c[0] + " - " + c[1] + " - " + c[2] + " - " + c[3] }
 end
 
 show_cards(9) 	
-
-puts ((Time.now - start_time).to_f).to_s
