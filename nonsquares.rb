@@ -12,8 +12,7 @@ def show_sequence_range(start_number, end_number)
 end
 
 def test_below(limit)
-  list = (1...limit).to_a.map { |i| nonsquare(i) }
-  list.each { |n| return false if (Math.sqrt(n) % 1 == 0) }
+  (1...limit).each { |i| return false if Math.sqrt(nonsquare(i)) % 1 == 0 }
   return true
 end		
 
