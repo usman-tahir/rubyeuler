@@ -1,33 +1,13 @@
+#!/usr/bin/env ruby
 # http://rosettacode.org/wiki/Abundant,_deficient_and_perfect_number_classifications
+require 'prime'
 
-def factors(num)
-  1.upto(Math.sqrt(num)).select {|i| (num % i).zero?}.inject([]) do |f, i| 
-    f << i
-    f << num/i unless i == num/i
-    f
-  end.sort
+def sum_div(n)
+  n.prime_division.map! { |e| ((e[0]**(e[1]+1)) - 1) / (e[0] - 1) }.inject(:*)
 end
 
-def classify(number)
-  return "abundant" if factors(number).inject(:+) - number > number
-  return "perfect" if factors(number).inject(:+) - number == number
-  return "deficient" if factors(number).inject(:+) - number < number
-end
+vals = (2..20_000).to_a.map { |e| sum_div(e) == (e*2) ? 0 : sum_div(e) > (e*2) ? 1 : -1 }
 
-abun = 0
-perf = 0
-defic = 0
-(1..20_000).each do |n|
-  case
-  when classify(n) == "abundant"
-    abun += 1
-  when classify(n) == "perfect"
-    perf += 1
-  when classify(n) == "deficient"
-    defic += 1
-  end
-end
-
-puts "deficients: #{defic}"
-puts "perfects: #{perf}"
-puts "abundants: #{abun}"
+p "deficient: #{vals.count(-1)}"
+p "perfect: #{vals.count(0)}"
+p "abundant: #{vals.count(1)}"
