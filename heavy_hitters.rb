@@ -1,11 +1,21 @@
 #!/usr/bin/env ruby
 # http://programmingpraxis.com/2015/06/02/heavy-hitters-the-britney-spears-algorithm/
 
-def heavy_hitters(text,n=20)
-  result = {}
-  text.each { |w| result[w] ? result[w] += 1 : result[w] = 1 }
-  Hash[*result.sort_by {|k,v| v * -1}[0...n].flatten]
+def add_to_hash(hash,word)
+  hash[word] ? hash[word] += 1 : hash[word] = 1
 end
 
-str = "With either algorithm, the array can be queried at any time to see the current list of most-frequent items in the array."
-p heavy_hitters(str.gsub!(/\./,"").split(/ /).map {|e| e.downcase},5)
+def show_current(hash,n=5)
+  limit = n > hash.keys.count ? hash.keys.count : n
+  Hash[*hash.sort_by {|k,v| v * -1}[0...limit].flatten]
+end
+
+words = {}
+loop do
+  print "enter the next word: "
+  word = gets.chomp
+  break if word == "q"
+  add_to_hash(words,word)
+  puts show_current(words)
+end
+puts show_current(words)
