@@ -1,11 +1,11 @@
+#!/usr/bin/env ruby
 # http://rosettacode.org/wiki/Towers_of_Hanoi
 
-def move(n,from,to,via)
-  if n > 0
-    move(n-1,from,via,to)
-    puts "Move from #{from} to #{to}"
-    move(n-1,via,to,from)
-  end  
+def m(n,f,t,v)
+  return if n <= 0
+  m(n-1,f,v,t) 
+  p "Move from #{f} to #{t}"
+  m(n-1,v,t,f)
 end
 
-move(4,1,2,3)    
+m(4,1,2,3)    
