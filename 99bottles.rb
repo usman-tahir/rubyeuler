@@ -1,21 +1,17 @@
+#!/usr/bin/env ruby
 # http://rosettacode.org/wiki/99_Bottles_of_Beer
 
-def bottles_of_beer(num)
-  if num > 1
-    puts num.to_s + " bottles of beer on the wall"
-    puts num.to_s + " bottles of beer"
-    puts "Take one down, pass it around"
-    puts (num-1).to_s + " bottles of beer on the wall"
-  elsif num == 1	
-    puts num.to_s + " bottle of beer on the wall"
-    puts num.to_s + " bottle of beer"
-    puts "Take it down, pass it around"
-    puts "0 bottles of beer on the wall"
-  end
+def bottles(n)
+  return if n == 0
+  a = -> (n) { n != 1 ? "s" : "" }
+  puts(<<-DOC)
+  #{n} bottle#{a[n]} of beer on the wall
+  #{n} bottle#{a[n]} of beer
+  take one down, pass it around
+  #{n-1} bottle#{a[n-1]} of beer on the wall
+  
+  DOC
+  bottles(n-1)
 end
 
-x = 99
-until x == 0
-  bottles_of_beer(x)
-  x -= 1
-end  
+bottles(99)
