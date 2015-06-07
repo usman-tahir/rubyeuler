@@ -1,14 +1,7 @@
 # http://projecteuler.net/problem=2
 
-def sum_even_fibonacci_numbers_up_to(limit_number)
-  result_accumulator = 0
-  fibo_number = 2
-  prior_fibo_number = 1
-  until fibo_number > limit_number
-    result_accumulator += fibo_number if fibo_number.even?
-    fibo_number, prior_fibo_number = (fibo_number + prior_fibo_number), fibo_number
-  end
-  result_accumulator
+def f_sum(l,acc=0,f=2,p=1)
+  return f > l ? acc : f.even? ? f_sum(l,acc+f,f+p,f) : f_sum(l,acc,f+p,f)
 end
 
-puts sum_even_fibonacci_numbers_up_to(4_000_000)     
+p f_sum(4_000_000)     
