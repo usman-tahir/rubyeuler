@@ -1,25 +1,9 @@
 // http://projecteuler.net/problem=2
 
-func evenFiboTerms() -> Int {
-  var nthCounter = 1
-  var accumulator = 0
-  var val = fibo(nthCounter)
-  while val < 4_000_000 {
-    if val % 2 == 0 {
-      accumulator += val 
-    }
-    nthCounter++
-    val = fibo(nthCounter)
-  }
-  return accumulator
+var fibo:[Int] = [1,2]
+while fibo.last <= 4_000_000 {
+    fibo.append(fibo[fibo.count-1] + fibo[fibo.count-2])
 }
 
-func fibo(nth:Int) -> Int {
-  if nth == 1 || nth == 2 {
-    return 1
-  } else {
-    return fibo(nth-1) + fibo(nth-2)
-  }
-}
-
-println(evenFiboTerms())
+let result = fibo.map { $0 % 2 == 0 ? $0 : 0 }.reduce(0, combine: +)
+println(result)
