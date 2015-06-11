@@ -1,8 +1,8 @@
+#!/usr/bin/env xcrun swift command_line_args.swift 
 // http://rosettacode.org/wiki/Command-line_arguments
 
 let args = Process.arguments
-let length = args.count
-for (var i = 1; i < length; i++) {
+for (var i = 0; i < args.count; i++) {
   println("arg \(i): \(args[i])")
 }
 
