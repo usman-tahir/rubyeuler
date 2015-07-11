@@ -1,18 +1,4 @@
 #!/usr/bin/env ruby
 
-def powerset(list)
-  result = [[],list]
-  list.each do |i|
-    temp_list = list - [i]
-    result << temp_list
-    temp_list.each do |e|
-      new_temp_list = temp_list - [e]
-      result << new_temp_list unless result.include?(new_temp_list)
-    end
-  end
-  result
-end
-
-list = [1,2,3]
-p powerset(list)
-
+powerset = -> l, res=[] { l.each { |i| t = l - [i]; res << t; t.each { |e| res << t - [e] unless res.include?(t - [e]) } }; res << [l,[]] }
+p powerset[[1,2,3]]
