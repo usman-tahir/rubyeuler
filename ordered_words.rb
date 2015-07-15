@@ -1,22 +1,15 @@
+#!/usr/bin/env ruby
+# http://programmingpraxis.com/
 # http://rosettacode.org/wiki/Ordered_words
 # http://www.puzzlers.org/pub/wordlists/unixdict.txt
 
-def ordered_word(string)
-  letters = string.downcase.split(//).to_a
-  limit = (letters.count - 2)
-  (0..limit).each do |index|
-    return false if letters[index] > letters[index+1]
-  end
-  return true
+def ordered_word(w)
+  letters = w.downcase.split(//).to_a
+  (0...letters.count-1).each { |i| return false if letters[i] > letters[i+1] }
 end
 
-def find_ordered_words_in_dictionary
-  ordered_words = []
-  words_to_test = File.open("unixdict.txt").readlines
-  words_to_test.map {|word| word.chomp!}
-  words_to_test.each do |word|
-    ordered_words << word if ordered_word(word)
-  end
+def find_ordered_words_in_dictionary(file="unixdict.txt",ordered_words=[])
+  File.open(file).readlines.map { |w| w.chomp! }.each { |w| ordered_words << w if ordered_word(w) }
   ordered_words.group_by { |word| word.length }.max
 end
 
