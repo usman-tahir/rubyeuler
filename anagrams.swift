@@ -30,7 +30,7 @@ func countAnagrams() {
   var anagramCount = 4
   var mostAnagrams: [String] = []
   for (key, value) in anagrams {
-    if value.count >= anagramCount {
+    if value.count > anagramCount {
       println("\(value.count): \(value)")
     }
   }
