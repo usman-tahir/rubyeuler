@@ -27,10 +27,8 @@ func splitWordIntoLetters(word: String) -> String {
 
 func countAnagrams() {
   let anagrams = findAnagrams("unixdict.txt")
-  var anagramCount = 4
-  var mostAnagrams: [String] = []
   for (key, value) in anagrams {
-    if value.count > anagramCount {
+    if value.count > 4 {
       println("\(value.count): \(value)")
     }
   }
