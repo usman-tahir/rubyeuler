@@ -10,5 +10,4 @@ func tfs(i: Int) -> Int {
   return n == 1 ? 1 : 0
 }
 
-var a = [Int](); a += 1...1_000_000
-println(a.map() { tfs($0) }.reduce(0) { $0 + $1 })
+println([Int](1...1_000_000).map() { tfs($0) }.filter() { $0 == 1 }.count)
