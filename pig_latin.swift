@@ -21,11 +21,7 @@ func initialConsonant(w: String, vowels: [String]) -> String {
 
 func pigLatinize(w: String) -> String {
   let vowels = ["a","e","i","o","u"]
-  if contains(vowels,w[0]) {
-    return initialVowel(w)
-  } else {
-    return initialConsonant(w,vowels)
-  }
+  return contains(vowels,w[0]) ? initialVowel(w) : initialConsonant(w,vowels)
 }
 
 extension String {
