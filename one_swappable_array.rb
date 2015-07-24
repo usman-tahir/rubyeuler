@@ -3,12 +3,8 @@
 
 def one_swappable_array(array)
   sorted_array = array.sort
-  (0...array.count).each do |i|
-    (0...array.count).each do |j|
-      return true if swap(array,i,j) == sorted_array
-    end
-  end
-  false
+  array.each_with_index { |i| array.each_with_index { |j| return true if swap(array,i,j) == sorted_array } }
+  return false
 end
 
 def swap(array,i,j)
