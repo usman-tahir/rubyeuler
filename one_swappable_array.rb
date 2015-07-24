@@ -13,7 +13,14 @@ def swap(array,i,j)
   return t
 end
 
+def new_one_swappable_array(array)
+  array.each_with_index.map { |e,i| i == 0 ? e : array[i] > array[i-1] ? e : nil }.compact.count + 2 == array.count
+end
+
+
 one = [1,2,6,4,5,3,7]
 two = [5,4,3,2,1]
 p one_swappable_array(one)
 p one_swappable_array(two)
+p new_one_swappable_array(one)
+p new_one_swappable_array(two)
