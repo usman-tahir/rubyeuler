@@ -1,16 +1,16 @@
 # http://programmingpraxis.com/2010/11/02/emirps/
 require 'prime'
 
-counter = 0
-Prime.each(1000) do |prime_number|
-  temp = prime_number
-  reversed = 0
-  while temp > 0
-    reversed = 10 * reversed + temp % 10
-    temp /= 10
+class Fixnum
+
+  def reverse
+    self.to_s.reverse.to_i
   end
-  next if reversed == prime_number
-  counter += 1 if reversed.prime?
+
 end
 
-p counter
+def findEmirpsBelow(n)
+  Prime.each(n).map { |p| p.reverse.prime? && p != p.reverse ? p : nil }.compact
+end
+
+p findEmirpsBelow(1000).count
