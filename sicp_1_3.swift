@@ -12,8 +12,7 @@ func sumOfSquaresOfTwoLargerInts(numbers: [Int]) -> Int {
     if maxElement(numbers) == minElement(numbers) {
       return sumOfSquaresOfTwoLargerInts([numbers[0],numbers[1]])
     } else {
-      let newNumbers = numbers.filter { $0 > minElement(numbers) }
-      return sumOfSquaresOfTwoLargerInts(newNumbers)
+      return sumOfSquaresOfTwoLargerInts(numbers.filter { $0 > minElement(numbers) })
     }
   }
 }
