@@ -3,9 +3,6 @@
 
 import Foundation
 
-// prime checker with Miller-Rabin test
-
-// building primitives
 func even(n: Int) -> Bool {
   return n % 2 == 0
 }
@@ -18,28 +15,21 @@ func greatestCommonDiv(a:Int,b:Int) -> Int {
   return b == 0 ? a : greatestCommonDiv(b,(a%b))
 }
 
-func random(n: Int) -> Int {
-  return Int(arc4random_uniform(UInt32(n)))
+func smallestDivisor(x: Int) -> Int {
+  return findDivisor(x,2)
 }
 
-func expmod(base: Int, exp: Int, m: Int) -> Int {
-  return exp == 0 ? 1 : even(exp) ? (square(expmod(base,(exp/2),m)) % m) : (base * expmod(base,(exp-1),m)) % m
+func findDivisor(n: Int, t: Int) -> Int {
+  return square(t) > n ? n : divides(t,n) ? t : findDivisor(n,t+1)
 }
 
-func fermatTest(n: Int) -> Bool {
-  let a = (random(n-1)+1)
-  return expmod(a,n,n) == a
+func divides(x: Int, y: Int) -> Bool {
+  return y % x == 0
 }
 
-func fastPrime(n: Int, t: Int) -> Bool {
-  return (t == 0) ? true : fermatTest(n) ? fastPrime(n,t-1) : false
+func prime(x: Int...) -> Bool {
+  return x[0] == smallestDivisor(x[0])
 }
-
-func prime(n: Int...) -> Bool {
-  return fastPrime(n[0],10)
-}
-
-// filtered-accumulate procedures
 
 func inc(n: Int) -> Int {
   return n + 1
