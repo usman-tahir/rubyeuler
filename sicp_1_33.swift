@@ -52,7 +52,7 @@ func identity(n: Int) -> Int {
 func filteredAccumulate(low: Int, high: Int, nullValue: Int, combiner: ((Int), (Int)) -> (Int), term: (Int) -> (Int), next: (Int) -> (Int), filter: (Int...) -> Bool) -> (Int) {
   if low > high {
     return nullValue
-  } else if filter(low) {
+  } else if filter(low,high) {
     return combiner(term(low),filteredAccumulate(next(low),high,nullValue,combiner,term,next,filter))
   } else {
     return filteredAccumulate(next(low),high,nullValue,combiner,term,next,filter)
@@ -72,3 +72,16 @@ func sumPrimeSquaresFrom(low: Int, high: Int) -> Int {
 }
 
 println(sumPrimeSquaresFrom(1,50000))
+
+func relativelyPrime(numbers: Int...) -> Bool {
+  return (greatestCommonDiv(numbers[0],numbers[1]) == 1)
+}
+
+func productOfIntsRelativelyPrimeTo(n: Int) -> Int {
+  return filteredAccumulate(1,n,1,multiplyCombiner,identity,inc,relativelyPrime)
+}
+
+println(productOfIntsRelativelyPrimeTo(20))
+
+// check result of prior function
+println([1, 3, 7, 9, 11, 13, 17, 19].reduce(1) { $0 * $1})
