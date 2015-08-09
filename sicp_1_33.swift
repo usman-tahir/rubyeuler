@@ -1,8 +1,6 @@
 #!/usr/bin/env swift
 // sicp exercise 1.33
 
-import Foundation
-
 func even(n: Int) -> Bool {
   return n % 2 == 0
 }
@@ -11,7 +9,7 @@ func square(n: Int) -> Int {
   return n * n
 }
 
-func greatestCommonDiv(a:Int,b:Int) -> Int {
+func greatestCommonDiv(a: Int, b: Int) -> Int {
   return b == 0 ? a : greatestCommonDiv(b,(a%b))
 }
 
@@ -35,7 +33,7 @@ func inc(n: Int) -> Int {
   return n + 1
 }
 
-func identity(n: Int) -> Int {
+func identity<T>(n: T) -> T {
   return n
 }
 
