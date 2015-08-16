@@ -29,11 +29,11 @@ func makeSegment<T>(startSegment: (T,T), endSegment: (T,T)) -> ((T,T),(T,T)) {
   return cons(startSegment,endSegment)
 }
 
-func midpointSegment(segment: ((Int,Int),(Int,Int))) -> (Int,Int) {
+func midpointSegment(segment: ((Double,Double),(Double,Double))) -> (Double,Double) {
   let newX = ((xPoint(car(segment)) + xPoint(cdr(segment))) / 2)
   let newY = ((yPoint(car(segment)) + yPoint(cdr(segment))) / 2)
   return makePoint(newX,newY)
 }
 
-let (start, end) = (makePoint(1,1), makePoint(6,6))
+let (start, end) = (makePoint(1.0,1.0), makePoint(6.0,6.0))
 println(midpointSegment(makeSegment(start,end)))
