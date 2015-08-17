@@ -15,11 +15,11 @@ func weirdCar(n: Int, count: Int = 0) -> Int {
   return n % 2 != 0 ? count : weirdCar(n/2, count: count+1)
 }
 
-func weirdCons(n: Int, count: Int = 0) -> Int {
-  return n % 3 != 0 ? count : weirdCons(n/3, count: count+1)
+func weirdCdr(n: Int, count: Int = 0) -> Int {
+  return n % 3 != 0 ? count : weirdCdr(n/3, count: count+1)
 }
 
 let testVal = weirdCons(2,5)
 println(testVal)
 println(weirdCar(testVal))
-println(weirdCons(testVal))
+println(weirdCdr(testVal))
