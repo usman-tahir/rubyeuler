@@ -15,14 +15,20 @@ func makeRat(n: Int, d: Int) -> (Int, Int) {
   return d < 0 ? cons((n * -1)/g, (d * -1)/g) : cons(n/g,d/g)
 }
 
+func num(n: (Int,Int)) -> Int {
+  return n.0
+}
+
+func denom(n: (Int,Int)) -> Int {
+  return n.1
+}
+
 func reciprocal(n: Int) -> (Int,Int) {
   return makeRat(1,n)
 }
 
 func sumFractions(one: (Int,Int), two: (Int,Int)) -> (Int,Int) {
-  let numerator = (one.0 * two.1) + (one.1 * two.0)
-  let denominator = (one.1 * two.1)
-  return makeRat(numerator,denominator)
+  return makeRat((num(one) * denom(two)) + (denom(one) * num(two)),(den(one) * denom(two)))
 }
 
 func slowFindDivisors(n: Int) -> [Int] {
