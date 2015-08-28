@@ -33,21 +33,6 @@ func derangedAnagram(one: String, two: String) -> Bool {
   return true
 }
 
-func derangedAnagrams(list: [String]) -> [String] {
-  var deranged: [String] = []
-  for i in 0..<list.count {
-    for j in 0..<list.count {
-      let one = list[i]
-      let two = list[j]
-      if derangedAnagram(one,two) {
-        deranged.append(one)
-        deranged.append(two)
-      }
-    }
-  }
-  return Array(Set(deranged))
-}
-
 func findLongestDerangedAnagrams() -> [String] {
   let file = "unixdict.txt"
   let fileContent = String(NSString(contentsOfFile: file, encoding: NSUTF8StringEncoding, error: nil)!)
@@ -55,9 +40,8 @@ func findLongestDerangedAnagrams() -> [String] {
   let anagrams = findAnagrams(wordsArray)
   var deranged: [[String]] = []
   for a in anagrams {
-    let d = derangedAnagrams(a)
-    if d.count > 1 {
-      deranged.append(derangedAnagrams(a))
+    if derangedAnagram(a[0],a[1]) {
+      deranged.append(a)
     }
   }
   var longestIndex = 0
