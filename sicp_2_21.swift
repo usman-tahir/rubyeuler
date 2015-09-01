@@ -3,10 +3,10 @@
 
 func newMap(proc: (Int) -> (Int), n: [Int], i: Int = 0) -> [Int] {
   var newN = n
-  if i == n.count {
+  if i == newN.count {
     return newN
   } else {
-    newN[i] = proc(n[i])
+    newN[i] = proc(newN[i])
     return newMap(proc, newN, i: i+1)
   }
 }
