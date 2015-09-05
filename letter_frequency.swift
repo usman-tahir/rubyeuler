@@ -3,21 +3,15 @@
 
 import Foundation
 
-extension String {
-  subscript (i: Int) -> String {
-    return String(Array(self)[i])
-  }
-}
-
 func charFrequency(lines: [String]) -> [String:Int] {
   var resultsDictionary = [String:Int]()
   for line in lines {
-    for i in 0..<count(line) {
-      let c = line[i]
-      if resultsDictionary[c] != nil {
-        resultsDictionary[c]! += 1
+    for c in Array(line) {// 0..<count(line) {
+      let _c = String(c)
+      if resultsDictionary[_c] != nil {
+        resultsDictionary[_c]! += 1
       } else {
-        resultsDictionary[c] = 1
+        resultsDictionary[_c] = 1
       }
     }
   }
