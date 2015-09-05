@@ -6,7 +6,7 @@ import Foundation
 func charFrequency(lines: [String]) -> [String:Int] {
   var resultsDictionary = [String:Int]()
   for line in lines {
-    for c in Array(line) {// 0..<count(line) {
+    for c in Array(line) {
       let _c = String(c)
       if resultsDictionary[_c] != nil {
         resultsDictionary[_c]! += 1
