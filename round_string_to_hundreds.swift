@@ -24,6 +24,7 @@ let four = "12"
 let five = "one"
 let six = ""
 let seven = ".//$%^"
+let eight = "//one234-1234"
 
-let testValues = [one,two,three,four,five,six,seven]
+let testValues = [one,two,three,four,five,six,seven,eight]
 for t in testValues { print("\(t): \(roundStringToHundreds(t))") }
