@@ -7,7 +7,6 @@ func roundStringToHundreds(n: String) -> Int? {
   func roundNumberToHundreds(n: Int) -> Int {
     return ((n / 100) * 100)
   }
-
   if let number = Int(n) {
     return number < 100 ? number : roundNumberToHundreds(number)
   } else if n.containsString("-") {
