@@ -4,11 +4,11 @@
 import Foundation
 
 func roundStringToHundreds(n: String) -> Int? {
-  func roundNumberToHundreds(n: Int) -> Int {
-    return ((n / 100) * 100)
+  func roundNToHundreds(n: Int) -> Int { 
+    return n > 100 ? ((n / 100) * 100) : n 
   }
   if let number = Int(n) {
-    return number < 100 ? number : roundNumberToHundreds(number)
+    return roundNToHundreds(number)
   } else if n.containsString("-") {
     return roundStringToHundreds(n.componentsSeparatedByString("-")[0])
   } else {
