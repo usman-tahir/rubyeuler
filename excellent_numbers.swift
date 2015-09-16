@@ -27,8 +27,7 @@ func split(n: Int, digits: [Int] = []) -> ([Int],[Int])? {
 }
 
 func join(numbers: [Int]) -> Int {
-  let digits = Int(numbers.map { "\($0)" }.reduce("") { $0 + $1 })!
-  return digits
+  return Int(numbers.map { "\($0)" }.reduce("") { $0 + $1 })!
 }
 
 func square(n: Int) -> Int {
