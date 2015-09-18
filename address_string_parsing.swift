@@ -1,5 +1,6 @@
 #!/usr/bin/env swift
 // helper functions to parse some addresses
+// swift 2
 
 import Foundation
 
@@ -29,6 +30,33 @@ func getStreetNumberFromAddressString(s: String) -> String? {
   }
 }
 
+func getStreetStringFromAddressString(s: String, flag: Bool = false) -> String? {
+  let c: [Character] = ["1","2","3","4","5","6","7","8","9","0","-"]
+  if s.characters.count == 0 {
+    return nil
+  } else if s.characters.first == " " {
+    let newS = String(s.characters.dropFirst())
+    return getStreetStringFromAddressString(newS, flag: true)
+  } else if c.contains(s.characters.first!) && flag == false {
+    let newS = String(s.characters.dropFirst())
+    return getStreetStringFromAddressString(newS)
+  } else {
+    return s
+  }
+}
+
+func streetBlockFromAddressString(s: String) -> String? {
+  if let n = getStreetNumberFromAddressString(s) {
+    if let street = getStreetStringFromAddressString(s) {
+      return "\(roundStringToHundreds(n)!) \(street)"
+    } else {
+      return nil
+    }
+  } else {
+    return nil
+  }
+}
+
 let testArray = ["1234 main street",
   "1 main street",
   "202 45th street",
@@ -47,9 +75,5 @@ let testArray = ["1234 main street",
   "qwerty"]
 
 for t in testArray {
-  if let n = getStreetNumberFromAddressString(t) {
-    print("\(t) => \(roundStringToHundreds(n))")
-  } else {
-    print("\(t) => nil")
-  }
+  print("\(t) => \(streetBlockFromAddressString(t))")
 }
