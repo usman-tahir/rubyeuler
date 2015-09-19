@@ -21,18 +21,25 @@ print(countChar("hello"))
 
 // 3. caesar cipher
 
-func caesarCipher(s: String, shift: Int = 0) -> String {
-  func adjustedI(i: Int) -> Int { return i > 25 ? (i - 26) : i }
+func caesarCipher(s: String, shift: Int = 0, encodeDecode: String = "e") -> String {
+  func adjustedIndex(i: Int) -> Int { 
+    return (i > 25) ? (i - 26) : (i < 0) ? (26 + i) : i
+  }
+  func adjustedShift(i: Int, s: Int, eD: String) -> Int {
+    return encodeDecode == "e" ? adjustedIndex(i+shift) : adjustedIndex(i-shift)
+  }
   let letters = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ".characters)
   var result = [Character]()
-  for c in s.characters {
-    if let i = letters.indexOf(c) {
-      result.append(letters[adjustedI(i+shift)])
-    } else {
-      result.append(c)
+    for c in s.characters {
+      if let i = letters.indexOf(c) {
+        result.append(letters[adjustedShift(i, s: shift, eD: encodeDecode)])
+      } else {
+        result.append(c)
+      }
     }
-  }
+  
   return String(result)
 }
 
-print(caesarCipher("ATTACK AT DAWN",shift: 5))
+print(caesarCipher("ATTACK AT DAWN", shift: 5))
+print(caesarCipher("FYYFHP FY IFBS", shift: 5, encodeDecode: "d"))
