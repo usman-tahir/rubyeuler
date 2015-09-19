@@ -22,22 +22,21 @@ print(countChar("hello"))
 // 3. caesar cipher
 
 func caesarCipher(s: String, shift: Int = 0, encodeDecode: String = "e") -> String {
+  let letters = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ".characters)
+  var result = [Character]()
   func adjustedIndex(i: Int) -> Int { 
     return (i > 25) ? (i - 26) : (i < 0) ? (26 + i) : i
   }
-  func adjustedShift(i: Int, s: Int, eD: String) -> Int {
+  func adjustedShift(i: Int) -> Int {
     return encodeDecode == "e" ? adjustedIndex(i+shift) : adjustedIndex(i-shift)
   }
-  let letters = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ".characters)
-  var result = [Character]()
-    for c in s.characters {
-      if let i = letters.indexOf(c) {
-        result.append(letters[adjustedShift(i, s: shift, eD: encodeDecode)])
-      } else {
-        result.append(c)
-      }
+  for c in s.characters {
+    if let i = letters.indexOf(c) {
+      result.append(letters[adjustedShift(i)])
+    } else {
+      result.append(c)
     }
-  
+  }
   return String(result)
 }
 
