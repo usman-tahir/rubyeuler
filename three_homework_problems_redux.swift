@@ -29,7 +29,7 @@ func caesarCipher(s: String, shift: Int = 0, encodeDecode: String = "e") -> Stri
   func adjustShift(i: Int) -> Int {
     return encodeDecode == "e" ? adjustI(i+shift) : adjustI(i-shift)
   }
-  return String(s.characters.map() { $0 != " " ? letters[adjustShift(letters.indexOf($0)!)] : $0 })
+  return String(s.characters.map() { letters.indexOf($0) != nil ? letters[adjustShift(letters.indexOf($0)!)] : $0 })
 }
 
 print(caesarCipher("ATTACK AT DAWN", shift: 5))
