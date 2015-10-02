@@ -11,7 +11,7 @@ func fourFlips() -> Int {
   let flips = [random(2), random(2), random(2), random(2)]
   var result = 0
   for i in 1..<flips.count {
-    if flips[i-1] == 1 && flips[i] == 1 { result += 1}
+    if flips[i-1] == 1 && flips[i] == 1 { result += 1 }
   }
   return result
 }
