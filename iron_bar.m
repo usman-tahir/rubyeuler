@@ -19,8 +19,7 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSArray *list = @[@29, @26, @31, @30, @30, @28, @28, @31, @24, @32];
         NSLog(@"iron bar median is: %d", ironBarMedian(list));
-        NSLog(@"actual median is: %d", actualMedian(list));
-        
+        NSLog(@"actual median is: %d", actualMedian(list));    
     }
     return 0;
 }
