@@ -1,47 +1,27 @@
+#!/usr/bin/env swift
 // http://rosettacode.org/wiki/Amicable_pairs
 
-func divisors(n:Int) -> [Int] {
-  var dvsrs:[Int] = []
-  for var i = 1; i < n; i++ {
-    if n % i == 0 {
-      dvsrs.append(i)
+func factors(n: Int) -> [Int] {
+  var factorsOfN: [Int] = []
+  for i in 1..<n {
+    if n % i == 0 { factorsOfN.append(i) }
+  }
+  return factorsOfN
+}
+
+func findAmicablePairs(limit: Int) -> [Int:Int] {
+  var pairs: [Int:Int] = [:]
+  var amicables:[Int:Int] = [:]
+  for i in 1..<limit {
+    amicables[i] = factors(i).reduce(0) { $0! + $1 }
+  }
+  for (k,v) in amicables {
+    if amicables[v] == k && v != k {
+      let temp = [k,v].sort { $0 < $1 }
+      pairs[temp[0]] = temp[1]
     }
-  }
-  return dvsrs
-}
-
-func sum(array:[Int],index:Int) -> Int {
-  if index == array.count {
-    return 0
-  } else {
-    return array[index] + sum(array,index+1)
-  }
-}
-
-func findAmicablePairs(limit:Int) -> [[Int]] {
-  var pairs:[[Int]] = []
-  var amicables = Dictionary<Int, Int>()
-  for var i = 1; i < limit; i++ {
-    amicables[i] = sum(divisors(i),0)
-  }
-  for (key,value) in amicables {
-    var temp:[Int] = [key,value]
-    if amicables[value] == key && value != key {
-      //let pair = temp.sort
-      //if !pairs.contains(pair) {
-      pairs.append(temp) 
-      //}
-    } 
   }
   return pairs
 }
 
-/*
-
-func uniq(array:[Int]) -> [Int] {
-
-}
-
-*/
-
-println(findAmicablePairs(20_00))
+print(findAmicablePairs(20_000))
