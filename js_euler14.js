@@ -1,28 +1,16 @@
 #!/usr/bin/env node
 // https://projecteuler.net/problem=14
 
-var collatzFunction = function (n) {
-  if (n === "even") {
-    return function (a) {
-      return a/2;
-    }
-  } else if (n === "odd") {
-    return function (a) {
-      return 3 * a + 1
-    }
-  }
-}
+var collatz = function(n,f) { return f(n) }
 
-var collatzify = function (n) {
-  var temp = n
+var collatzify = function(n) {
+  var even = function(x) { return x/2 };
+  var odd = function(x) { return 3 * x + 1 }
+  var t = n
   var counter = 1
-  while (temp != 1) {
-    if (temp % 2 === 0) {
-      temp = collatzFunction("even")(temp)
-    } else {
-      temp = collatzFunction("odd")(temp)
-    }
-    counter++;
+  while (t != 1) {
+    t = t % 2 === 0 ? collatz(t,even) : collatz(t,odd)
+    counter++
   }
   return counter
 }
