@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF8">
+<title>stupid fizzbuzz</title>
+</head>
+<body>
+  <button id="fizzbuzz" onclick="fizzbuzz()">0</button>
+  <script>
+  var button = document.getElementById("fizzbuzz")
+  var counter = 0
+  function fizzbuzz() {
+    counter++
+    if (counter === 101) {
+      counter = 0
+      button.innerHTML = 0
+    } else if (counter % 15 === 0) {
+      button.innerHTML = "fizzbuzz"
+    } else if (counter % 5 === 0) {
+      button.innerHTML = "buzz"
+    } else if (counter % 3 === 0) {
+      button.innerHTML = "fizz"
+    } else {
+      button.innerHTML = counter
+    }
+  }
+  </script>
+</body>
+</html>
