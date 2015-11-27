@@ -2,7 +2,7 @@
 # http://www.codewars.com/kata/find-the-parity-outlier
 
 def find_parity_outlier(list)
-  parity = [list[0] % 2, list[1] % 2, list[2] % 2].inject(:+) < 2 ? 0 : 1
+  parity = list[0..2].map {|e| e % 2}.inject(:+) < 2 ? 0 : 1
   list.reject { |e| e % 2 == parity }.first
 end
 
