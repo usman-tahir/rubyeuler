@@ -1,36 +1,23 @@
 #!/usr/bin/env swift
-// http://rosettacode.org/wiki/Stack
+// stack
 
-func stackPush(array:[Int],number:Int) -> [Int] {
-  var mutableArray = array
-  mutableArray.append(number)
-  return mutableArray
-}
+class Stack<T> {
+  
+  var elements = [T]()
 
-func stackEmpty(array:[Int]) -> Bool {
-  return array.count == 0
-}
-
-func stackPop(array:[Int]) -> [Int] {
-  var mutableArray = array
-  let endIndex = mutableArray.count-1
-  var poppedValue: Int
-  if !stackEmpty(mutableArray) {
-    poppedValue = mutableArray[endIndex]
-    mutableArray.removeAtIndex(endIndex)
+  func push(n: T) {
+    elements.append(n)
   }
-  return mutableArray
+
+  func pop() -> T? {
+    return elements.count == 0 ? nil : elements.removeLast()
+  }
+
 }
 
-func stackTop(array:[Int]) -> Int {
-  var endIndex = array.count-1
-  return array[endIndex]
-}
-
-var stack:[Int] = []
-println(stackEmpty(stack))
-stack = stackPush(stack,3)
-println(stackEmpty(stack))
-stack = stackPush(stack,4)
-println(stackTop(stack))
-println(stackPop(stack))
+let a = Stack<Int>()
+a.push(1)
+print(a.elements)
+let c = a.pop()
+print(c)
+print(a.elements)
