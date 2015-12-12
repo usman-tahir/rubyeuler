@@ -1,3 +1,4 @@
+#!/usr/bin/env swift
 // http://rosettacode.org/wiki/Stack
 
 func stackPush(array:[Int],number:Int) -> [Int] {
