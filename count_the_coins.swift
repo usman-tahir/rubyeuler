@@ -1,31 +1,28 @@
+#!/usr/bin/env swift
 // http://rosettacode.org/wiki/Count_the_coins
 
-func countChange(amount:Int) -> Int {
-  return cc(amount,4)
+func countChange(amt: Int) -> Int {
+  return cc(amt, kinds: 4)
 }
 
-func cc(amount:Int,kindsOfCoins:Int) -> Int {
-  if amount == 0 {
-    return 1
-  } else if (amount < 0) || (kindsOfCoins == 0) {
-    return 0
-  } else {
-    return (cc(amount,kindsOfCoins-1) + cc(amount-firstDenomination(kindsOfCoins), kindsOfCoins))
-  }
+func cc(amt: Int, kinds: Int) -> Int {
+  guard amt > 0 else { return 1 }
+  return (amt < 0 || kinds == 0) ? 0 : cc(amt, kinds: kinds-1) + cc(amt-firstD(kinds), kinds: kinds)
 }
 
-func firstDenomination(kindsOfCoins:Int) -> Int {
-  if kindsOfCoins == 1 {
+func firstD(kinds: Int) -> Int {
+  switch kinds {
+  case 1:
     return 1
-  } else if kindsOfCoins == 2 {
+  case 2:
     return 5
-  } else if kindsOfCoins == 3 {
+  case 3:
     return 10
-  } else if kindsOfCoins == 4 {
+  case 4:
     return 25
-  } else {
+  default:
     return 0
   }
 }
 
-println(countChange(100))
+print(countChange(100))
