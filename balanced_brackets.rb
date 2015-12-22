@@ -11,7 +11,7 @@ def balanced(s,index=0,balance=0)
   elsif s[index] == "]"
     balanced(s,index+1,balance-1)
   else
-    balances(s,index+1,balance)
+    balanced(s,index+1,balance)
   end
 end
 
