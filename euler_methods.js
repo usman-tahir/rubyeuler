@@ -151,6 +151,6 @@ module.exports = {
 
   palindrome: function(number) {
     return number === this.reverse(number);
-  },
+  }
 
 }
