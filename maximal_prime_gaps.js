@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // http://programmingpraxis.com/2016/01/08/maximal-prime-gaps/
 
-function seiveOfEratosthones(limit) {
+function sieveOfEratosthones(limit) {
   var primes = Array.apply(null, { length: limit }).map(Number.call, Number)
   primes.splice(0,2);
   for (var i = 0; i < primes.length; i++) {
@@ -15,7 +15,7 @@ function seiveOfEratosthones(limit) {
 }
 
 function displayPrimeGaps(limit) {
-  var primes = seiveOfEratosthones(limit);
+  var primes = sieveOfEratosthones(limit);
   var gap = primes[1] - primes[0];
   console.log(primes[0] + "     " + gap);
   for (var i = 1; i < primes.length-1; i++) {
