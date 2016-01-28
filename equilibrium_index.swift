@@ -6,9 +6,7 @@ func equilibriumIndex(list: [Int]) -> [Int] {
   for i in 1..<list.count {
     let firstPart = Array(list[0..<i+1]).reduce(0, combine: +)
     let secondPart = Array(list[i..<list.count]).reduce(0, combine: +)
-    if firstPart == secondPart { 
-      eqIndices.append(i) 
-    }
+    if firstPart == secondPart { eqIndices.append(i) }
   }
   return eqIndices
 }
