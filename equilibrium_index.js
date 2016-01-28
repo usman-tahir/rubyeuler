@@ -6,6 +6,7 @@ function equilibriumIndex(list) {
   for (var i = 1; i < list.length; i++) {
     var firstPart = list.slice(0,i+1).reduce(function(a,b) { return a+b });
     var secondPart = list.slice(i,list.length).reduce(function(a,b) { return a+b });
+    console.log(firstPart + "/" + secondPart)
     if (firstPart === secondPart) { eqIndices.push(i) };
   }
   return eqIndices;
