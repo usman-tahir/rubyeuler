@@ -27,6 +27,15 @@ func eulerOneThree() -> Int {
   return v.flatMap { eulerOneMapper($0, f1: threes, f2: fives) }.reduce(0, combine: +)
 }
 
+let eulerOneFour: () -> Int = { 
+  let v = [Int](1..<1000)
+  let threes: (Int) -> Bool = { return $0 % 3 == 0 }
+  let fives: (Int) -> Bool = { return $0 % 5 == 0 }
+  let fivesOrThrees: (Int) -> Int? = { return threes($0) || fives($0) ? $0 : nil }
+  return v.flatMap { return fivesOrThrees($0) }.reduce(0, combine: +)
+}
+
 print(eulerOneOne())
 print(eulerOneTwo(1,limit:1000))
 print(eulerOneThree())
+print(eulerOneFour())
