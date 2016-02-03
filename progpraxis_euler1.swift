@@ -19,7 +19,7 @@ func eulerOneTwo(n: Int, limit: Int, accumulator: Int = 0) -> Int {
 
 func eulerOneThree() -> Int {
   func eulerOneMapper(n: Int, f1: (Int) -> Bool, f2: (Int) -> Bool) -> Int? { 
-    return threes(n) || fives(n) ? n : nil
+    return f1(n) || f2(n) ? n : nil
   }
   func threes(n: Int) -> Bool { return n % 3 == 0 }
   func fives(n: Int) -> Bool { return n % 5 == 0 }
