@@ -4,9 +4,7 @@
 function compressString(s) {
   function numberOfSameNextCharacters(s, index) {
     if (index >= s.length) { return 0 };
-    var newIndex = index+1;
-    var counter = 1;
-    var c = s.split("");
+    var newIndex = index+1; var counter = 1; var c = s.split("");
     while (c[index] === c[newIndex]) {
       newIndex++;
       counter++;
