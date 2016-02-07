@@ -8,11 +8,11 @@ func square(x: Int) -> Int {
 }
 
 func smallestDivisor(x: Int) -> Int {
-  return findDivisor(x,2)
+  return findDivisor(x, t: 2)
 }
 
 func findDivisor(n: Int, t: Int) -> Int {
-  return square(t) > n ? n : divides(t,n) ? t : findDivisor(n,t+1)
+  return square(t) > n ? n : divides(t, y: n) ? t : findDivisor(n, t: t+1)
 }
 
 func divides(x: Int, y: Int) -> Bool {
@@ -32,11 +32,11 @@ func currentTime() -> Double {
 }
 
 func timedPrimeTest(n: Int) {
-  startPrimeTest(n,currentTime())
+  startPrimeTest(n, startTime: currentTime())
 }
 
 func startPrimeTest(n: Int, startTime: Double) {
-  prime(n) ? reportPrime(n,(currentTime() - startTime)) : devNull()
+  prime(n) ? reportPrime(n, elapsedTime: (currentTime() - startTime)) : devNull()
 }
 
 func devNull() {
@@ -44,22 +44,22 @@ func devNull() {
 }
 
 func reportPrime(n: Int, elapsedTime: Double) {
-  println("\(n) *** \(elapsedTime)")
+  print("\(n) *** \(elapsedTime)")
 }
 
 func searchForPrimes(first: Int, last: Int) {
-  even(first) ? searchIter(first+1,last) : searchIter(first,last-1)
+  even(first) ? searchIter(first+1, last: last) : searchIter(first, last: last-1)
 }
 
 func searchIter(cur: Int, last: Int) {
   if cur <= last {
     timedPrimeTest(cur)
-    searchIter(cur+2,last)
+    searchIter(cur+2, last: last)
   }
 }
 
-println(searchForPrimes(1000,1050))
-println(searchForPrimes(10_000,10_050))
-println(searchForPrimes(100_000,100_050))
-println(searchForPrimes(1_000_000,1_000_050))
-println(searchForPrimes(10_000_000,10_000_150))
+print(searchForPrimes(1000, last: 1050))
+print(searchForPrimes(10_000, last: 10_050))
+print(searchForPrimes(100_000, last: 100_050))
+print(searchForPrimes(1_000_000, last: 1_000_050))
+print(searchForPrimes(10_000_000, last: 10_000_150))
