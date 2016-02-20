@@ -8,9 +8,9 @@ def first_nonrepeated_char(s):
       characters_dictionary[s[i]] += 1
     else:
       characters_dictionary[s[i]] = 1
-  for k in characters_dictionary:
-    if s.count(k) == 1:
-      return k
+  for i in xrange(0,len(s)):
+    if characters_dictionary[s[i]] == 1:
+      return s[i]
   return None
 
 for w in ["total","teeter"]:
