@@ -3,15 +3,10 @@
 def sum_proper_divisors(n):
     return sum([x for x in xrange(1,n) if n % x == 0])
 
-def amicable(x,y):
+def amicable(x, y):
     return sum_proper_divisors(x) == y and sum_proper_divisors(y) == x and x != y
 
-def find_amicables_below(limit):
-    result = []
-    for x in xrange(1,limit):
-        y = sum_proper_divisors(x)
-        if amicable(x, y):
-          result.append(x)
-    return result
+def find_amicable_sum_below(limit):
+    return sum([x for x in xrange(1,limit) if amicable(x, sum_proper_divisors(x))])
   
-print(sum(find_amicables_below(10000)))
+print(find_amicable_sum_below(10000))
