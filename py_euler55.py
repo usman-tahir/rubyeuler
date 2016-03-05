@@ -13,17 +13,18 @@ def is_lychrel(n):
     return True
 
 
-def reverse_and_sum(n):
+def _reverse(n):
     digits = list(str(n))
     digits.reverse()
-    reversed_n = int("".join(digits))
-    return n + reversed_n
+    return int("".join(digits))
+
+
+def reverse_and_sum(n):
+    return n + _reverse(n)
 
 
 def is_palindrome(n):
-    digits = list(str(n))
-    digits.reverse()
-    return n == int("".join(digits))
+    return n == _reverse(n)
 
 
 def find_lychrels_below(limit):
