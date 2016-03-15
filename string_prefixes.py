@@ -2,6 +2,10 @@
 # https://programmingpraxis.com/2016/03/08/string-prefixes/
 
 def find_string_prefix(*str):
+    if len(str) == 0:
+        return ""
+    elif len(str) == 1:
+        return str[0]
     common_prefix = ""
     for i in xrange(0,len(str[0])):
         for j in xrange(1,len(str)):
@@ -11,3 +15,5 @@ def find_string_prefix(*str):
     return common_prefix
 
 print find_string_prefix('i love cats','i love dogs','i log')
+print find_string_prefix()
+print find_string_prefix('i love pizza')
