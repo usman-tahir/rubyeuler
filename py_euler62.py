@@ -26,6 +26,3 @@ def find_n_cubic_permutations(n):
         counter += 1
 
 print find_n_cubic_permutations(5)
-
-
-print is_permutation(123,321)
